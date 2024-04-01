@@ -56,11 +56,32 @@
     <a name="circuit" val="main"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="1.0"/>
+    <comp lib="0" loc="(1150,720)" name="Bit Extender">
+      <a name="out_width" val="8"/>
+    </comp>
+    <comp lib="0" loc="(470,370)" name="Constant">
+      <a name="value" val="0x4"/>
+      <a name="width" val="8"/>
+    </comp>
+    <comp lib="3" loc="(530,360)" name="Adder"/>
+    <comp lib="4" loc="(1580,430)" name="RAM">
+      <a name="appearance" val="classic"/>
+    </comp>
+    <comp lib="4" loc="(340,410)" name="Register">
+      <a name="appearance" val="logisim_evolution"/>
+      <a name="label" val="PC"/>
+    </comp>
     <comp lib="4" loc="(450,430)" name="ROM">
       <a name="appearance" val="classic"/>
       <a name="label" val="Instrucoes"/>
     </comp>
     <comp loc="(1160,460)" name="banco_reg"/>
+    <comp loc="(1530,470)" name="ALU"/>
+    <wire from="(400,440)" to="(420,440)"/>
+    <wire from="(420,350)" to="(420,440)"/>
+    <wire from="(420,350)" to="(490,350)"/>
+    <wire from="(420,440)" to="(450,440)"/>
+    <wire from="(470,370)" to="(490,370)"/>
   </circuit>
   <circuit name="banco_reg">
     <a name="appearance" val="logisim_evolution"/>
