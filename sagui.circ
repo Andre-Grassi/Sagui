@@ -229,9 +229,6 @@
     <a name="circuit" val="ALU"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="1.0"/>
-    <comp lib="0" loc="(220,540)" name="Splitter">
-      <a name="facing" val="west"/>
-    </comp>
     <comp lib="0" loc="(230,390)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="Operand1"/>
@@ -316,7 +313,7 @@
     <wire from="(340,440)" to="(340,540)"/>
     <wire from="(340,440)" to="(420,440)"/>
     <wire from="(340,540)" to="(340,600)"/>
-    <wire from="(340,540)" to="(360,540)"/>
+    <wire from="(340,540)" to="(370,540)"/>
     <wire from="(340,600)" to="(370,600)"/>
     <wire from="(390,530)" to="(400,530)"/>
     <wire from="(390,590)" to="(400,590)"/>
