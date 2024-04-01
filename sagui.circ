@@ -229,7 +229,7 @@
     <a name="circuit" val="ALU"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="1.0"/>
-    <comp lib="0" loc="(230,390)" name="Pin">
+    <comp lib="0" loc="(230,400)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="Operand1"/>
       <a name="width" val="8"/>
@@ -288,15 +288,14 @@
     <comp lib="3" loc="(460,590)" name="Shifter">
       <a name="shift" val="lr"/>
     </comp>
-    <wire from="(230,390)" to="(310,390)"/>
+    <wire from="(230,400)" to="(310,400)"/>
     <wire from="(230,440)" to="(340,440)"/>
     <wire from="(310,210)" to="(310,270)"/>
     <wire from="(310,210)" to="(420,210)"/>
     <wire from="(310,270)" to="(310,320)"/>
     <wire from="(310,270)" to="(420,270)"/>
-    <wire from="(310,320)" to="(310,390)"/>
+    <wire from="(310,320)" to="(310,400)"/>
     <wire from="(310,320)" to="(420,320)"/>
-    <wire from="(310,390)" to="(310,400)"/>
     <wire from="(310,400)" to="(310,480)"/>
     <wire from="(310,400)" to="(420,400)"/>
     <wire from="(310,480)" to="(310,520)"/>
