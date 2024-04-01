@@ -75,7 +75,7 @@
       <a name="appearance" val="classic"/>
       <a name="label" val="Instrucoes"/>
     </comp>
-    <comp loc="(1160,460)" name="banco_reg"/>
+    <comp loc="(1080,460)" name="banco_reg"/>
     <comp loc="(1530,470)" name="ALU"/>
     <wire from="(400,440)" to="(420,440)"/>
     <wire from="(420,350)" to="(420,440)"/>
@@ -84,10 +84,28 @@
     <wire from="(470,370)" to="(490,370)"/>
   </circuit>
   <circuit name="banco_reg">
-    <a name="appearance" val="logisim_evolution"/>
+    <a name="appearance" val="custom"/>
     <a name="circuit" val="banco_reg"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="1.0"/>
+    <appear>
+      <rect fill="none" height="112" stroke="#000000" width="200" x="140" y="59"/>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="187" y="69">Read Register 1</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="188" y="100">Read Register 2</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="184" y="128">Write Register</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="174" y="158">Write Data</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="300" y="99">Read Data 1</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="299" y="128">Read Data 2</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="291" y="70">RegWrite</text>
+      <circ-anchor facing="east" x="340" y="100"/>
+      <circ-port dir="in" pin="130,540" x="140" y="130"/>
+      <circ-port dir="in" pin="190,470" x="140" y="160"/>
+      <circ-port dir="in" pin="200,670" x="290" y="60"/>
+      <circ-port dir="in" pin="970,410" x="140" y="70"/>
+      <circ-port dir="in" pin="970,530" x="140" y="100"/>
+      <circ-port dir="out" pin="1050,570" x="340" y="130"/>
+      <circ-port dir="out" pin="1060,370" x="340" y="100"/>
+    </appear>
     <comp lib="0" loc="(1050,570)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
