@@ -56,12 +56,42 @@
     <a name="circuit" val="main"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="1.0"/>
-    <comp lib="0" loc="(1150,720)" name="Bit Extender">
-      <a name="out_width" val="8"/>
+    <comp lib="0" loc="(310,460)" name="Power"/>
+    <comp lib="0" loc="(320,480)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Clk"/>
+    </comp>
+    <comp lib="0" loc="(340,700)" name="Clock"/>
+    <comp lib="0" loc="(370,700)" name="Tunnel">
+      <a name="label" val="Clk"/>
     </comp>
     <comp lib="0" loc="(470,370)" name="Constant">
       <a name="value" val="0x4"/>
       <a name="width" val="8"/>
+    </comp>
+    <comp lib="0" loc="(730,490)" name="Splitter">
+      <a name="appear" val="center"/>
+      <a name="bit0" val="1"/>
+      <a name="bit2" val="1"/>
+      <a name="bit3" val="1"/>
+      <a name="bit4" val="0"/>
+      <a name="bit5" val="0"/>
+      <a name="bit6" val="0"/>
+      <a name="bit7" val="0"/>
+      <a name="incoming" val="8"/>
+      <a name="spacing" val="3"/>
+    </comp>
+    <comp lib="0" loc="(790,490)" name="Splitter">
+      <a name="appear" val="center"/>
+      <a name="bit0" val="1"/>
+      <a name="bit2" val="0"/>
+      <a name="bit3" val="0"/>
+      <a name="incoming" val="4"/>
+      <a name="spacing" val="2"/>
+    </comp>
+    <comp lib="0" loc="(970,680)" name="Bit Extender">
+      <a name="in_width" val="4"/>
+      <a name="out_width" val="8"/>
     </comp>
     <comp lib="3" loc="(530,360)" name="Adder"/>
     <comp lib="4" loc="(1580,430)" name="RAM">
@@ -75,13 +105,62 @@
       <a name="appearance" val="classic"/>
       <a name="label" val="Instrucoes"/>
     </comp>
-    <comp loc="(1080,460)" name="banco_reg"/>
-    <comp loc="(1340,480)" name="ALU"/>
+    <comp lib="5" loc="(1460,490)" name="Hex Digit Display"/>
+    <comp lib="8" loc="(730,506)" name="Text">
+      <a name="font" val="SansSerif bold 10"/>
+      <a name="text" val="Reg ou Imm"/>
+    </comp>
+    <comp lib="8" loc="(731,448)" name="Text">
+      <a name="font" val="SansSerif bold 10"/>
+      <a name="text" val="Opcode"/>
+    </comp>
+    <comp lib="8" loc="(798,461)" name="Text">
+      <a name="font" val="SansSerif bold 10"/>
+      <a name="text" val="Ra"/>
+    </comp>
+    <comp lib="8" loc="(806,500)" name="Text">
+      <a name="font" val="SansSerif bold 10"/>
+      <a name="text" val="Rb"/>
+    </comp>
+    <comp loc="(1070,470)" name="banco_reg"/>
+    <comp loc="(1340,490)" name="ALU"/>
+    <wire from="(1070,470)" to="(1170,470)"/>
+    <wire from="(1070,500)" to="(1170,500)"/>
+    <wire from="(1170,460)" to="(1170,470)"/>
+    <wire from="(1170,460)" to="(1220,460)"/>
+    <wire from="(1170,500)" to="(1170,520)"/>
+    <wire from="(1170,520)" to="(1220,520)"/>
+    <wire from="(1340,490)" to="(1400,490)"/>
+    <wire from="(1400,490)" to="(1400,630)"/>
+    <wire from="(310,280)" to="(310,440)"/>
+    <wire from="(310,280)" to="(580,280)"/>
+    <wire from="(310,440)" to="(340,440)"/>
+    <wire from="(310,460)" to="(340,460)"/>
+    <wire from="(320,480)" to="(340,480)"/>
+    <wire from="(340,700)" to="(370,700)"/>
     <wire from="(400,440)" to="(420,440)"/>
     <wire from="(420,350)" to="(420,440)"/>
     <wire from="(420,350)" to="(490,350)"/>
     <wire from="(420,440)" to="(450,440)"/>
     <wire from="(470,370)" to="(490,370)"/>
+    <wire from="(530,360)" to="(580,360)"/>
+    <wire from="(560,740)" to="(860,740)"/>
+    <wire from="(580,280)" to="(580,360)"/>
+    <wire from="(690,490)" to="(730,490)"/>
+    <wire from="(750,490)" to="(770,490)"/>
+    <wire from="(770,490)" to="(770,680)"/>
+    <wire from="(770,490)" to="(790,490)"/>
+    <wire from="(770,680)" to="(930,680)"/>
+    <wire from="(810,470)" to="(840,470)"/>
+    <wire from="(810,490)" to="(850,490)"/>
+    <wire from="(840,440)" to="(840,470)"/>
+    <wire from="(840,440)" to="(870,440)"/>
+    <wire from="(840,530)" to="(840,630)"/>
+    <wire from="(840,530)" to="(870,530)"/>
+    <wire from="(840,630)" to="(1400,630)"/>
+    <wire from="(850,470)" to="(850,490)"/>
+    <wire from="(850,470)" to="(870,470)"/>
+    <wire from="(860,740)" to="(860,820)"/>
   </circuit>
   <circuit name="banco_reg">
     <a name="appearance" val="custom"/>
