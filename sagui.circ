@@ -157,7 +157,6 @@
       <a name="label" val="Clk"/>
     </comp>
     <comp lib="0" loc="(600,420)" name="Constant">
-      <a name="value" val="0x4"/>
       <a name="width" val="8"/>
     </comp>
     <comp lib="0" loc="(670,1080)" name="Probe">
