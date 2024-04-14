@@ -214,7 +214,7 @@
       <a name="incoming" val="4"/>
       <a name="spacing" val="2"/>
     </comp>
-    <comp lib="0" loc="(940,740)" name="Tunnel">
+    <comp lib="0" loc="(950,760)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="R0"/>
       <a name="labelfont" val="SansSerif bold 10"/>
@@ -425,11 +425,10 @@
     <wire from="(850,1000)" to="(930,1000)"/>
     <wire from="(850,810)" to="(850,1000)"/>
     <wire from="(850,810)" to="(900,810)"/>
-    <wire from="(920,790)" to="(940,790)"/>
+    <wire from="(920,740)" to="(920,790)"/>
+    <wire from="(920,740)" to="(960,740)"/>
     <wire from="(920,810)" to="(1050,810)"/>
-    <wire from="(940,740)" to="(960,740)"/>
-    <wire from="(940,760)" to="(940,790)"/>
-    <wire from="(940,760)" to="(960,760)"/>
+    <wire from="(950,760)" to="(960,760)"/>
     <wire from="(970,1000)" to="(1020,1000)"/>
     <wire from="(970,710)" to="(970,730)"/>
     <wire from="(970,710)" to="(980,710)"/>
