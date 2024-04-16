@@ -336,6 +336,7 @@
     <wire from="(1060,610)" to="(1080,610)"/>
     <wire from="(1060,630)" to="(1080,630)"/>
     <wire from="(1060,650)" to="(1080,650)"/>
+    <wire from="(1070,860)" to="(1170,860)"/>
     <wire from="(1130,290)" to="(1130,410)"/>
     <wire from="(1140,290)" to="(1140,410)"/>
     <wire from="(1140,410)" to="(1250,410)"/>
@@ -777,10 +778,10 @@
     <comp lib="3" loc="(460,590)" name="Shifter">
       <a name="shift" val="lr"/>
     </comp>
-    <comp lib="8" loc="(504,721)" name="Text">
+    <comp lib="8" loc="(500,720)" name="Text">
       <a name="text" val="movl"/>
     </comp>
-    <comp lib="8" loc="(506,654)" name="Text">
+    <comp lib="8" loc="(505,650)" name="Text">
       <a name="text" val="movh"/>
     </comp>
     <wire from="(230,400)" to="(310,400)"/>
