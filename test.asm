@@ -1,6 +1,8 @@
 # Inicializa registrador 0 com o valor XXXXXXX não sei qual é o resultado
-movh 12     # R[0] = {Imm. + R[0](3:0)}
-movl 3      # R[0] = {R[0](7:4) + Imm.}
+sub $0, $0  # R[0] = R[0] - R[0] # Reseta o registrador 0 --> 10100000 = A0
+movh 7      # R[0] = {Imm + R[0](3:0)} = {0111 + 0000} = 01110000 = 112 --> 01110111 = 77
+sub $0, $0  # R[0] = R[0] - R[0] # Reseta o registrador 0 --> 10100000 = A0
+movl 7      # R[0] = {R[0](7:4) + Imm.} = {0000 + 0111} = 00000111 = 7 --> 10000111 = 87
 
 # num riscv real pode ter espaços em branco tipo o acima?
 
