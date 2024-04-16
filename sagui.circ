@@ -320,9 +320,9 @@
     <wire from="(1010,290)" to="(1010,320)"/>
     <wire from="(1010,320)" to="(1150,320)"/>
     <wire from="(1040,750)" to="(1040,760)"/>
-    <wire from="(1040,760)" to="(1040,820)"/>
+    <wire from="(1040,760)" to="(1040,800)"/>
     <wire from="(1040,760)" to="(1070,760)"/>
-    <wire from="(1040,820)" to="(1070,820)"/>
+    <wire from="(1040,800)" to="(1060,800)"/>
     <wire from="(1040,850)" to="(1040,970)"/>
     <wire from="(1040,850)" to="(1070,850)"/>
     <wire from="(1040,970)" to="(1160,970)"/>
@@ -336,7 +336,8 @@
     <wire from="(1060,610)" to="(1080,610)"/>
     <wire from="(1060,630)" to="(1080,630)"/>
     <wire from="(1060,650)" to="(1080,650)"/>
-    <wire from="(1070,860)" to="(1170,860)"/>
+    <wire from="(1060,800)" to="(1060,820)"/>
+    <wire from="(1060,820)" to="(1070,820)"/>
     <wire from="(1130,290)" to="(1130,410)"/>
     <wire from="(1140,290)" to="(1140,410)"/>
     <wire from="(1140,410)" to="(1250,410)"/>
@@ -474,7 +475,7 @@
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="291" y="70">RegWrite</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="238" y="158">Clk</text>
       <circ-anchor facing="east" x="340" y="100"/>
-      <circ-port dir="in" pin="120,390" x="140" y="170"/>
+      <circ-port dir="in" pin="120,390" x="240" y="170"/>
       <circ-port dir="in" pin="130,540" x="140" y="130"/>
       <circ-port dir="in" pin="190,470" x="140" y="160"/>
       <circ-port dir="in" pin="200,670" x="290" y="60"/>
@@ -498,7 +499,7 @@
       <a name="width" val="8"/>
     </comp>
     <comp lib="0" loc="(120,390)" name="Pin">
-      <a name="appearance" val="NewPins"/>
+      <a name="appearance" val="classic"/>
       <a name="label" val="Clk"/>
     </comp>
     <comp lib="0" loc="(130,540)" name="Pin">
