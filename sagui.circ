@@ -58,7 +58,7 @@
     <a name="appearance" val="logisim_evolution"/>
     <a name="circuit" val="main"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="simulationFrequency" val="1.0"/>
+    <a name="simulationFrequency" val="0.5"/>
     <comp lib="0" loc="(1020,1000)" name="Tunnel">
       <a name="label" val="Imm"/>
       <a name="width" val="8"/>
@@ -150,11 +150,6 @@
       <a name="labelfont" val="SansSerif bold 9"/>
       <a name="width" val="4"/>
     </comp>
-    <comp lib="0" loc="(1600,810)" name="Probe">
-      <a name="appearance" val="NewPins"/>
-      <a name="facing" val="south"/>
-      <a name="radix" val="10unsigned"/>
-    </comp>
     <comp lib="0" loc="(1640,700)" name="Tunnel">
       <a name="label" val="JorB"/>
       <a name="labelfont" val="SansSerif bold 9"/>
@@ -172,6 +167,11 @@
     <comp lib="0" loc="(1760,900)" name="Tunnel">
       <a name="facing" val="north"/>
       <a name="label" val="Clk"/>
+    </comp>
+    <comp lib="0" loc="(180,820)" name="Probe">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="south"/>
+      <a name="radix" val="10unsigned"/>
     </comp>
     <comp lib="0" loc="(2060,840)" name="Probe">
       <a name="appearance" val="NewPins"/>
@@ -301,7 +301,7 @@
 91 10 34 1 74 64 0 0
 7f 64 6*0 8 7*0 15 7*0 21
 7*0 3f 7*0 47 7*0 57 23*0 a0
-77 a0 87
+77 a0 87 64
 </a>
       <a name="label" val="Instrucoes"/>
     </comp>
@@ -422,8 +422,11 @@
     <wire from="(1590,640)" to="(1590,690)"/>
     <wire from="(1590,640)" to="(1610,640)"/>
     <wire from="(1600,710)" to="(1600,730)"/>
+    <wire from="(1600,800)" to="(1600,810)"/>
+    <wire from="(1600,800)" to="(1610,800)"/>
     <wire from="(1600,810)" to="(1600,950)"/>
     <wire from="(1610,700)" to="(1640,700)"/>
+    <wire from="(1610,800)" to="(1610,1200)"/>
     <wire from="(1670,840)" to="(1670,910)"/>
     <wire from="(1670,840)" to="(1780,840)"/>
     <wire from="(1710,640)" to="(1730,640)"/>
@@ -436,6 +439,8 @@
     <wire from="(1740,810)" to="(1780,810)"/>
     <wire from="(1760,820)" to="(1760,900)"/>
     <wire from="(1760,820)" to="(1780,820)"/>
+    <wire from="(180,1200)" to="(1610,1200)"/>
+    <wire from="(180,820)" to="(180,1200)"/>
     <wire from="(2020,840)" to="(2060,840)"/>
     <wire from="(2060,840)" to="(2060,960)"/>
     <wire from="(2060,840)" to="(2100,840)"/>
