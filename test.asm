@@ -92,9 +92,26 @@ ld $2, $1 # R[2] = M[R[1]] <=> R[2] = M[1] --> 01001001 = 49
 
 
 ######## BRZR ########
-brzr $1, $0 ## Falha
+# Não entra no branch
+brzr $1, $0 # if (R[1] == 0) PC = R[0] = 7
+
+# Entra no branch
+movl 8
+movh 2
+# R[0] = 28
 sub $1, $1
-brzr $1, xx ## Dá certo
+brzr $1, $0 # if (R[1] == 0) PC = R[0] = 28
+
+
 ######## BRZI ########
+# Não entra no branch
+brzi 7 # if (R[0] == 0) PC = PC + Imm = PC + 7
+
+# Entra no branch
+sub $0, $0 # R[0] = 0
+brzi 7 # if (R[0] == 0) PC = PC + Imm = PC + 7
+
+
 ######## JR ########
+
 ######## JI ########
