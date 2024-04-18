@@ -38,7 +38,16 @@ sub $2, $3 # R[2] = R[2] - R[3] = 7 - (-25) = 32 --> 10101011 = AB
 
 # Subtração de negativo com negativo
 sub $3, $0  # R[3] = R[3] - R[0] = -25 - (-16) = -9 --> 10101100 = AC
-and 
+
+
+######## AND ########
+
+# And de valores diferentes
+and $2, $1 # R[2] = R[2] & R[1] = 32 & 7 = 0 --> 10111001 = B9
+
+# And de valores iguais
+and $1, $1 # R[1] = R[1] & R[1] = 7 & 7 = 7 --> 10110101 = B5
+
 or
 not
 slr
