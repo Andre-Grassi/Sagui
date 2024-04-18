@@ -80,16 +80,19 @@ slr $1, $0 # R[1] = R[1] << R[0] = 1 << 7 = -128
 # Máximo de srr possível, causando underflow
 srr $1, $0 # R[1] = R[1] << R[0] = 1 << 7 = 1 --> 
 
-######## STORE ########
-# Store
 
+######## STORE ########
+st $0, $1 # M[R[1]] = R[0] <=> M[1] = 7 -->
 
 
 ######## LOAD ########
-# Load
+ld $2, $1 # R[2] = M[R[1]] <=> R[2] = M[1] -->
 
 
 ######## BRZR ########
+brzr $1, $0 ## Falha
+sub $1, $1
+brzr $1, xx ## Dá certo
 ######## BRZI ########
 ######## JR ########
 ######## JI ########
