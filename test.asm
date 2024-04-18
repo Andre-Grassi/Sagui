@@ -48,16 +48,34 @@ and $2, $1 # R[2] = R[2] & R[1] = 32 & 7 = 0 --> 10111001 = B9
 # And de valores iguais
 and $1, $1 # R[1] = R[1] & R[1] = 7 & 7 = 7 --> 10110101 = B5
 
+######## OR ########
+
+# Or de valores diferentes
+
+# Or de valores iguais
 or
+
+######## NOT ########
 not
+
+
+######## SLR ########
 slr
+
+
+######## SRR ########
 srr
 
+
+######## STORE ########
 # Store
+
+
+######## LOAD ########
 # Load
-# brzr dando certo
-# brzr dando errado
-# brzi dando certo
-# brzi dando errado
-# jr
-# ji
+
+
+######## BRZR ########
+######## BRZI ########
+######## JR ########
+######## JI ########
