@@ -58,7 +58,7 @@
     <a name="appearance" val="logisim_evolution"/>
     <a name="circuit" val="main"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="simulationFrequency" val="0.5"/>
+    <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(1020,1000)" name="Tunnel">
       <a name="label" val="Imm"/>
       <a name="width" val="8"/>
@@ -171,7 +171,7 @@
     <comp lib="0" loc="(180,820)" name="Probe">
       <a name="appearance" val="NewPins"/>
       <a name="facing" val="south"/>
-      <a name="radix" val="10unsigned"/>
+      <a name="radix" val="10signed"/>
     </comp>
     <comp lib="0" loc="(2060,840)" name="Probe">
       <a name="appearance" val="NewPins"/>
@@ -298,10 +298,10 @@
     <comp lib="4" loc="(490,750)" name="ROM">
       <a name="appearance" val="classic"/>
       <a name="contents">addr/data: 8 8
-91 10 34 1 74 64 0 0
-7f 64 6*0 8 7*0 15 7*0 21
-7*0 3f 7*0 47 7*0 57 23*0 a0
-77 a0 87 64
+a0 77 a0 87 64 69 6e 99
+a0 7f 9c 9c a9 ab ac b9
+b5 c4 c5 d5 a0 81 64 e4
+f4 87 e4 f4 51 49
 </a>
       <a name="label" val="Instrucoes"/>
     </comp>
