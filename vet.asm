@@ -17,6 +17,12 @@ st $1, $0 # M[0] = 10
 movl 1
 movr $1, $0
 
+# R[3] recebe o endereço do vetor 2
+# Endereço do vetor 2 = Endereço do vetor 1 + 10
+movl 1010
+movr $3, $0
+add $3, $1
+
 # Inicializa vetor 1 na memória
 # R[2] recebe 1 para incremento do endereço
 movl 1
@@ -28,8 +34,8 @@ st $0, $1
 
 # vet_1[1] = -45
 add $1, $2 # R[1] = 1 + 1 = 2
-movh 1101
 movl 0011
+movh 1101
 st $0, $1
 
 # vet_1[2] = 25
@@ -80,27 +86,63 @@ movl XXXX
 movh XXXX
 st $0, $1
 
+# Inicializa vetor 2 na memória
+# vet_2[0] = -5
+movl 1110
+movh 1111
+st $0, $3
 
+# vet_2[1] = 23
+add $3, $2 # R[3] = 11 + 1 = 12
+movl XXXX
+movh XXXX
+st $0, $3
 
+# vet_2[2] = 65
+add $3, $2 # R[3] = 12 + 1 = 13
+movl XXXX
+movh XXXX
+st $0, $3
 
+# vet_2[3] = 21
+add $3, $2 # R[3] = 13 + 1 = 14
+movl XXXX
+movh XXXX
+st $0, $3
 
+# vet_2[4] = -24
+add $3, $2 # R[3] = 14 + 1 = 15
+movl XXXX
+movh XXXX
+st $0, $3
 
-# R[1] ponteiro para vet_1
-sub $1, $1
-# R[1] = 0
+# vet_2[5] = -33
+add $3, $2 # R[3] = 15 + 1 = 16
+movl XXXX
+movh XXXX
+st $0, $3
 
-# R[2] ponteiro para vet_2
-movr $2, $2
-# R[2] = 10
+# vet_2[6] = -1
+add $3, $2 # R[3] = 16 + 1 = 17
+movl XXXX
+movh XXXX
+st $0, $3
 
-# R[3] ponteiro para vet_r
-sub $3, $3
-add $3, $0
-add $3, $0
-# R[3] = 20
+# vet_2[7] = 24
+add $3, $2 # R[3] = 17 + 1 = 18
+movl XXXX
+movh XXXX
+st $0, $3
 
+# vet_2[8] = 63 
+add $3, $2 # R[3] = 18 + 1 = 19
+movl XXXX
+movh XXXX
+st $0, $3
 
-
-#soma
-vet_e
+# vet_2[9] = 10
+add $3, $2 # R[3] = 19 + 1 = 20
+movl XXXX
+movh XXXX
+st $0, $3
 
