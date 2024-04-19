@@ -1,0 +1,5 @@
+{ 
+"BasedOnStyle": "Microsoft",   
+"SpaceBeforeParens": "Always",
+"BreakBeforeBraces": "Attach"
+}
