@@ -152,9 +152,9 @@ movl 1 # 10000001 = 81
 movr $1, $0 # 01100100 = 64
 
 # Guarda o endereço do vetor 1 na posição 18 (hex) da RAM
-movl 1000
-movh 0001
-st $1, $0
+movl 1000 # 10001000 = 88
+movh 0001 # 01110001 = 71
+st $1, $0 # 01010100 = 54
 
 # R[2] recebe o endereço do vetor 2
 # Endereço do vetor 2 = Endereço do vetor 1 + 10
@@ -166,7 +166,7 @@ add $2, $1 # 10011001 = 99
 # Guarda o endereço do vetor 2 na posição 19 (hex) da RAM
 movl 1001 # 10001001 = 89
 movh 0001 # 01110001 = 71
-st $2, $0 # 01010100 = 54
+st $2, $0 # 01011000 = 58
 
 # Guarda o endereço do vetor resultado na posição 1a da RAM
 # Endereço vai começar no 20
@@ -179,13 +179,13 @@ movh 0001 # 01110001 = 71
 st $3, $0 # M[1A] = 20 --> 01011100 = 5C
 
 # Guarda contador na posição 1b da RAM
-movl 1010 # 10001010 = 8A
+movl 1010 # 10001010 = 8A 
 movh 0000 # 01110000 = 70
 movr $3, $0 # R[3] = 10 --> 01101100 = 6C
 movl 1011 # 10001011 = 8B
 movh 0001 # 01110001 = 71
 st $3, $0 # M[1B] = 10 --> 01011100 = 5C
-
+--- até aqui na rom
 # R[0] indica se a soma acabou, 0 = acabou, diferente de 0 = não acabou
 brzi imm
 # Talvez gambiarra aqui pro salto grande
