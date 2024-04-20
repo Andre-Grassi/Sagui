@@ -179,12 +179,12 @@ movh 0001
 st $3, $0 # M[1A] = 20
 
 # Guarda contador na posição 1b da RAM
-movl 0000
+movl 1010
 movh 0000
-movr $3, $0 # R[3] = 0
+movr $3, $0 # R[3] = 10
 movl 1011
 movh 0001
-st $3, $0 # M[1B] = 0
+st $3, $0 # M[1B] = 10
 
 # R[0] indica se a soma acabou, 0 = acabou, diferente de 0 = não acabou
 brzi imm
@@ -228,10 +228,20 @@ st $1, $3
 # Pega o contador
 movl 1011
 movh 0001
-ld $0, $0
+ld $1, $0
 
+# Decrementa o contador
+movl 0001
+movh 0000
+sub $1, $0
 
+# Guarda salto em R[2]
+movl 0100
+movh 1110
+movr $2, $0
 
+# Guarda o contador em R[0]
+movr $0, $1
 
-
-ji imm
+# Volta à condição do laço
+ji $2
