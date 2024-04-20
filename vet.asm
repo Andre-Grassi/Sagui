@@ -190,59 +190,59 @@ st $3, $0 # M[1B] = 10 --> 01011100 = 5C
 brzi imm
 # Talvez gambiarra aqui pro salto grande
 # Pega o endereço do vetor 1
-movl 1000
-movh 0001
-ld $1, $0
+movl 1000 # 10001000 = 88
+movh 0001 # 01110001 = 71
+ld $1, $0 # 01000100 = 44
 
 # Pega o endereço do vetor 2
-movl 1001
-movh 0001
-ld $2, $0
+movl 1001 # 10001001 = 89
+movh 0001 # 01110001 = 71
+ld $2, $0 # 01001000 = 48
 
 # Pega o endereço do vetor resultado
-movl 0000
-movh 0010
-ld $3, $0
+movl 0000 # 10000000 = 80
+movh 0010 # 01110010 = 72
+ld $3, $0 # 01001100 = 4C
 
 # Pega o contador
-movl 1011
-movh 0001
-ld $0, $0
+movl 1011 # 10001011 = 8B
+movh 0001 # 01110001 = 71
+ld $0, $0 # 01000000 = 40
 
 # Obtém o índice correto dos vetores
-add $1, $0
-add $2, $0
-add $3, $0
+add $1, $0 # 10010100 = 94
+add $2, $0 # 10011000 = 98
+add $3, $0 # 10011100 = 9C
 
 # Pega vetor 1
-ld $1, $1
+ld $1, $1 # 01000101 = 45
 
 # Pegar vetor 2
-ld $2, $2
+ld $2, $2 # 01001010 = 4A
 
 # Soma os vetores
-add $1, $2
+add $1, $2 # 10010110 = 96
 
 # Guarda no endereço indicado por $3 o resultado
-st $1, $3
+st $1, $3 # 01010111 = 57
 
 # Pega o contador
-movl 1011
-movh 0001
-ld $1, $0
+movl 1011 # 10001011 = 8B
+movh 0001 # 01110001 = 71
+ld $1, $0 # 01000100 = 44
 
 # Decrementa o contador
-movl 0001
-movh 0000
-sub $1, $0
+movl 0001 # 10000001 = 81
+movh 0000 # 01110000 = 70
+sub $1, $0 # 10100100 = A4
 
 # Guarda salto em R[2]
-movl 0100
-movh 1110
-movr $2, $0
+movl 0100 # 10000100 = 84
+movh 1110 # 01111110 = 7E
+movr $2, $0 # 01101000 = 68
 
 # Guarda o contador em R[0]
-movr $0, $1
+movr $0, $1 # 01100001 = 61
 
 # Volta à condição do laço
-ji $2
+jr $2 # 00100010 = 22
