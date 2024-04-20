@@ -179,7 +179,7 @@ movh 0001 # 01110001 = 71
 st $3, $0 # M[1A] = 20 --> 01011100 = 5C
 
 # Guarda contador na posição 1b da RAM
-movl 1010 # 10001010 = 8A 
+movl 1001 # 10001001 = 89 Cont vale 9 
 movh 0000 # 01110000 = 70
 movr $3, $0 # R[3] = 10 --> 01101100 = 6C
 movl 1011 # 10001011 = 8B
