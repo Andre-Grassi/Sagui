@@ -93,56 +93,104 @@ movh 1111 # 01111111 = 7F
 st $0, $2 # 01010010 = 52
 
 # vet_2[1] = 23
-add $2, $3 # R[3] = 11 + 1 = 12 --> 10011011 = 9B
+add $2, $3 # R[2] = 11 + 1 = 12 --> 10011011 = 9B
 movl 0111 # 10000111 = 87
 movh 0001 # 01110001 = 71
 st $0, $2 # 01010010 = 52
 
 # vet_2[2] = 65
-add $2, $3 # R[3] = 12 + 1 = 13 --> 10011011 = 9B
+add $2, $3 # R[2] = 12 + 1 = 13 --> 10011011 = 9B
 movl 0001 # 10000001 = 81
 movh 0100 # 01110100 = 74
 st $0, $2 # 01010010 = 52
 
 # vet_2[3] = 21
-add $2, $3 # R[3] = 13 + 1 = 14 --> 10011011 = 9B
+add $2, $3 # R[2] = 13 + 1 = 14 --> 10011011 = 9B
 movl 0101 # 10000101 = 85
 movh 0001 # 01110001 = 71
 st $0, $2 # 01010010 = 52
 
 # vet_2[4] = -24
-add $2, $3 # R[3] = 14 + 1 = 15 --> 10011011 = 9B
+add $2, $3 # R[2] = 14 + 1 = 15 --> 10011011 = 9B
 movl 1000 # 10001000 = 88
 movh 1110 # 01110001 = 7E
 st $0, $2 # 01010010 = 52
 
 # vet_2[5] = -33
-add $2, $3 # R[3] = 15 + 1 = 16 --> 10011011 = 9B
+add $2, $3 # R[2] = 15 + 1 = 16 --> 10011011 = 9B
 movl 1111 # 10001111 = 8F
 movh 1101 # 01111101 = 7D
 st $0, $2 # 01010010 = 52
 
 # vet_2[6] = -1
-add $2, $3 # R[3] = 16 + 1 = 17 --> 10011011 = 9B
+add $2, $3 # R[2] = 16 + 1 = 17 --> 10011011 = 9B
 movl 1111 # 10001111 = 8F
 movh 1111 # 01111111 = 7F
 st $0, $2 # 01010010 = 52
 
 # vet_2[7] = 24
-add $2, $3 # R[3] = 17 + 1 = 18 --> 10011011 = 9B
+add $2, $3 # R[2] = 17 + 1 = 18 --> 10011011 = 9B
 movl 1000 # 10001000 = 88
 movh 0001 # 01110001 = 71
 st $0, $2 # 01010010 = 52
 
 # vet_2[8] = 63 
-add $2, $3 # R[3] = 18 + 1 = 19 --> 10011011 = 9B
+add $2, $3 # R[2] = 18 + 1 = 19 --> 10011011 = 9B
 movl 1111 # 10001111 = 8F
 movh 0011 # 01110011 = 73
 st $0, $2 # 01010010 = 52
 
 # vet_2[9] = 10
-add $2, $3 # R[3] = 19 + 1 = 20 --> 10011011 = 9B
+add $2, $3 # R[2] = 19 + 1 = 20 --> 10011011 = 9B
 movl 1010 # 10001010 = 8A
 movh 0000 # 01110000 = 70
 st $0, $2 # 01010010 = 52
 
+# Soma dos vetores
+# R[1] recebe o endereço do vetor 1
+movl 1 # 10000001 = 81
+movr $1, $0 # 01100100 = 64
+
+# Guarda o endereço do vetor 1 na posição 18 (hex) da RAM
+movl 1000
+movh 0001
+st $1, $0
+
+# R[2] recebe o endereço do vetor 2
+# Endereço do vetor 2 = Endereço do vetor 1 + 10
+movl 1010 # 10001010 = 8A
+movh 0000 # 01110000 = 70
+movr $2, $0 # 01101000 = 68
+add $2, $1 # 10011001 = 99
+
+# Guarda o endereço do vetor 2 na posição 19 (hex) da RAM
+movl 1001
+movh 0001
+st $2, $0
+
+# Guarda o endereço do vetor resultado na posição 1a da RAM
+# Endereço vai começar no 20
+# R[3] recebe o endereco do vetor resultado
+movl 0000
+movh 0010
+movr $3, $0 # R[3] = 20
+movl 1010
+movh 0001
+st $3, $0 # M[1A] = 20
+
+# Guarda contador na posição 1b da RAM
+movl 0000
+movh 0000
+movr $3, $0 # R[3] = 0
+movl 1011
+movh 0001
+st $3, $0 # M[1B] = 0
+
+# R[0] indica se a soma acabou, 0 = acabou, diferente de 0 = não acabou
+brzi imm
+
+
+
+
+
+ji imm
