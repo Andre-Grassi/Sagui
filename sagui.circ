@@ -6,9 +6,6 @@
     <tool name="Pin">
       <a name="appearance" val="classic"/>
     </tool>
-    <tool name="Ground">
-      <a name="facing" val="east"/>
-    </tool>
   </lib>
   <lib desc="#Gates" name="1"/>
   <lib desc="#Plexers" name="2"/>
@@ -58,7 +55,7 @@
     <a name="appearance" val="logisim_evolution"/>
     <a name="circuit" val="main"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="simulationFrequency" val="32.0"/>
+    <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(1020,1000)" name="Tunnel">
       <a name="label" val="Imm"/>
       <a name="width" val="8"/>
@@ -640,6 +637,10 @@ f4 87 e4 f4 51 49 4 88
       <a name="facing" val="east"/>
       <a name="label" val="Clk"/>
     </comp>
+    <comp lib="0" loc="(550,360)" name="Ground"/>
+    <comp lib="0" loc="(550,460)" name="Ground"/>
+    <comp lib="0" loc="(550,560)" name="Ground"/>
+    <comp lib="0" loc="(550,670)" name="Ground"/>
     <comp lib="0" loc="(970,410)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="facing" val="north"/>
