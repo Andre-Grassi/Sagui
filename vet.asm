@@ -188,6 +188,47 @@ st $3, $0 # M[1B] = 0
 
 # R[0] indica se a soma acabou, 0 = acabou, diferente de 0 = não acabou
 brzi imm
+# Pega o endereço do vetor 1
+movl 1000
+movh 0001
+ld $1, $0
+
+# Pega o endereço do vetor 2
+movl 1001
+movh 0001
+ld $2, $0
+
+# Pega o endereço do vetor resultado
+movl 0000
+movh 0010
+ld $3, $0
+
+# Pega o contador
+movl 1011
+movh 0001
+ld $0, $0
+
+# Obtém o índice correto dos vetores
+add $1, $0
+add $2, $0
+add $3, $0
+
+# Pega vetor 1
+ld $1, $1
+
+# Pegar vetor 2
+ld $2, $2
+
+# Soma os vetores
+add $1, $2
+
+# Guarda no endereço indicado por $3 o resultado
+st $1, $3
+
+# Pega o contador
+movl 1011
+movh 0001
+ld $0, $0
 
 
 
