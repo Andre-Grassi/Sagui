@@ -185,7 +185,7 @@ movr $3, $0 # R[3] = 10 --> 01101100 = 6C
 movl 1011 # 10001011 = 8B
 movh 0001 # 01110001 = 71
 st $3, $0 # M[1B] = 10 --> 01011100 = 5C
---- até aqui na rom
+
 # R[0] indica se a soma acabou, 0 = acabou, diferente de 0 = não acabou
 brzr $0, $3 # 00000011 = 03
 # Talvez gambiarra aqui pro salto grande
@@ -263,5 +263,3 @@ movr $0, $1 # 01100001 = 61
 
 # Volta à condição do laço
 jr $2 # 00100010 = 22
-
-# Todas as operações estão dando certo menos a última iteração aparentemente
