@@ -246,13 +246,15 @@ movl 1011 # 10001011 = 8B
 movh 0001 # 01110001 = 71
 st $1, $0 # 01010100 = 54
 
-# Guarda o valor antigo do contador em R[0]
-movr $0, $2 # 01100010 = 62
+# Guarda o valor antigo do contador em R[1]
+movr $1, $2 # 01100110 = 66
 
 # Guarda salto em R[2]
 movl 1000 # 10001000 = 88
 movh 1011 # 01111011 = 7B
 movr $2, $0 # 01101000 = 68
+
+movr $0, $1 # 01100001 = 61
 
 # Volta à condição do laço
 jr $2 # 00100010 = 22
