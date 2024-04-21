@@ -237,8 +237,8 @@ movh 0000 # 01110000 = 70
 sub $1, $0 # 10100100 = A4
 
 # Guarda salto em R[2]
-movl 0100 # 10000100 = 84
-movh 1110 # 01111110 = 7E
+movl 1000 # 10001000 = 88
+movh 1011 # 01111011 = 7B
 movr $2, $0 # 01101000 = 68
 
 # Guarda o contador em R[0]
