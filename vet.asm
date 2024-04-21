@@ -187,7 +187,7 @@ movh 0001 # 01110001 = 71
 st $3, $0 # M[1B] = 10 --> 01011100 = 5C
 --- até aqui na rom
 # R[0] indica se a soma acabou, 0 = acabou, diferente de 0 = não acabou
-brzi imm
+brzr $0, $3 # 00000011 = 03
 # Talvez gambiarra aqui pro salto grande
 # Pega o endereço do vetor 1
 movl 1000 # 10001000 = 88
@@ -249,10 +249,15 @@ st $1, $0 # 01010100 = 54
 # Guarda o valor antigo do contador em R[1]
 movr $1, $2 # 01100110 = 66
 
-# Guarda salto em R[2]
+# Guarda salto do jump em R[2]
 movl 1000 # 10001000 = 88
 movh 1011 # 01111011 = 7B
 movr $2, $0 # 01101000 = 68
+
+# Guarda salto do branch em R[3]
+movl 0001 # 10000000 = 81
+movh 1110 # 01101110 = 7E
+movr $3, $0 # 01101100 = 6C
 
 movr $0, $1 # 01100001 = 61
 
