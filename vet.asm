@@ -200,8 +200,8 @@ movh 0001 # 01110001 = 71
 ld $2, $0 # 01001000 = 48
 
 # Pega o endereço do vetor resultado
-movl 0000 # 10000000 = 80
-movh 0010 # 01110010 = 72
+movl 1010 # 10001010 = 8A
+movh 0001 # 01110001 = 71
 ld $3, $0 # 01001100 = 4C
 
 # Pega o contador
@@ -243,6 +243,6 @@ movr $2, $0 # 01101000 = 68
 
 # Guarda o contador em R[0]
 movr $0, $1 # 01100001 = 61
-
+######################### até aqui certo
 # Volta à condição do laço
 jr $2 # 00100010 = 22
