@@ -55,7 +55,7 @@
     <a name="appearance" val="logisim_evolution"/>
     <a name="circuit" val="main"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="simulationFrequency" val="1.0"/>
+    <a name="simulationFrequency" val="64.0"/>
     <comp lib="0" loc="(1020,1000)" name="Tunnel">
       <a name="label" val="Imm"/>
       <a name="width" val="8"/>
@@ -320,10 +320,11 @@ f4 87 e4 f4 51 49 4 88
 54 8a 70 68 99 89 71 58
 80 72 6c 8a 71 5c 89 70
 6c 8b 71 5c 0 88 71 44
-89 71 48 80 72 4c 8b 71
+89 71 48 8a 71 4c 8b 71
 40 94 98 9c 45 4a 96 57
-8b 71 44 81 70 a4 84 7e
-68 61 22
+8b 71 44 81 70 a4 8b 71
+48 8b 71 54 62 88 7b 68
+22
 </a>
       <a name="label" val="Instrucoes"/>
     </comp>

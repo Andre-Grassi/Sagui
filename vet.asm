@@ -236,13 +236,25 @@ movl 0001 # 10000001 = 81
 movh 0000 # 01110000 = 70
 sub $1, $0 # 10100100 = A4
 
+# Pega o contador (antigo)
+movl 1011 # 10001011 = 8B
+movh 0001 # 01110001 = 71
+ld $2, $0 # 01001000 = 48
+
+# Armazena novo valor do contador
+movl 1011 # 10001011 = 8B
+movh 0001 # 01110001 = 71
+st $1, $0 # 01010100 = 54
+
+# Guarda o valor antigo do contador em R[0]
+movr $0, $2 # 01100010 = 62
+
 # Guarda salto em R[2]
 movl 1000 # 10001000 = 88
 movh 1011 # 01111011 = 7B
 movr $2, $0 # 01101000 = 68
 
-# Guarda o contador em R[0]
-movr $0, $1 # 01100001 = 61
-######################### até aqui certo
 # Volta à condição do laço
 jr $2 # 00100010 = 22
+
+# Todas as operações estão dando certo menos a última iteração aparentemente
