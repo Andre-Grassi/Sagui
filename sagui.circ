@@ -58,7 +58,7 @@
     <a name="appearance" val="logisim_evolution"/>
     <a name="circuit" val="main"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="simulationFrequency" val="8.0"/>
+    <a name="simulationFrequency" val="128.0"/>
     <comp lib="0" loc="(1080,510)" name="Tunnel">
       <a name="label" val="RegWrite"/>
       <a name="labelfont" val="SansSerif bold 9"/>
@@ -282,7 +282,7 @@ e4 f4 87 e4 f4 51 49 4
 8a 71 4c 8b 71 40 94 98
 9c 45 4a 96 57 8b 71 44
 81 70 a4 8b 71 48 8b 71
-54 66 88 7b 68 81 7e 6c
+54 66 8d 7b 68 86 7e 6c
 61 22
 </a>
       <a name="label" val="Instrucoes"/>
