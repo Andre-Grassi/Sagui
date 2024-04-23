@@ -1392,6 +1392,8 @@ e4 f4 87 e4 f4 51 49 4
       <a name="fanout" val="4"/>
       <a name="incoming" val="4"/>
     </comp>
+    <comp lib="0" loc="(220,60)" name="NoConnect"/>
+    <comp lib="0" loc="(230,60)" name="NoConnect"/>
     <comp lib="0" loc="(530,120)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="facing" val="west"/>
