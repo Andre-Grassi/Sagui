@@ -188,7 +188,6 @@ st $3, $0 # M[1B] = 10 --> 01011100 = 5C
 
 # R[0] indica se a soma acabou, 0 = acabou, diferente de 0 = não acabou
 brzr $0, $3 # 00000011 = 03
-# Talvez gambiarra aqui pro salto grande
 # Pega o endereço do vetor 1
 movl 1000 # 10001000 = 88
 movh 0001 # 01110001 = 71
