@@ -84,6 +84,7 @@ movl 0111   # R[1] = {R[1](7:4) + Imm.} = {0000 + 0111} = 00000111 = 7 --> 10110
 
 ## STORE ##
 
+######################################### // FIX, o R[0] dos vetoriais nem sempre é 00
 # Guarda os valores dos R[1] nas memórias na posição 0
 st $1, $0 # M[R[0]] = R[1] <=> M[0] = 7 --> 10010100 = 94
 
@@ -91,10 +92,10 @@ st $1, $0 # M[R[0]] = R[1] <=> M[0] = 7 --> 10010100 = 94
 ## LOAD ##
 
 # Carrega os valores das memórias na posição 0 para os R[2] 
-ld $2, $0 # R[2] = M[R[0]] <=> R[2] = M[0] --> 10011000 = 98
+ld $2, $0 # R[2] = M[R[0]] <=> R[2] = M[0] --> 10001000 = 88 
 
 # Carrega os valores das memórias na posição 0 para os R[3]
-ld $3, $0 # R[3] = M[R[0]] <=> R[3] = M[0] --> 10011100 = 9C
+ld $3, $0 # R[3] = M[R[0]] <=> R[3] = M[0] --> 10001100 = 8C 
 
 
 ## ADD ##
