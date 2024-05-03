@@ -84,8 +84,8 @@ movl 0111   # R[1] = {R[1](7:4) + Imm.} = {0000 + 0111} = 00000111 = 7 --> 10110
 
 ## STORE ##
 
-######################################### // FIX, o R[0] dos vetoriais nem sempre é 00
-# Guarda os valores dos R[1] nas memórias na posição 0
+# Guarda os valores dos R[1] nas memórias na posição de 0 a 3
+# pois o R[0] dos vetoriais varia de 0 a 3
 st $1, $0 # M[R[0]] = R[1] <=> M[0] = 7 --> 10010100 = 94
 
 
@@ -120,6 +120,7 @@ and $2, $3 # R[2] = R[2] & R[3] = 7 & 7 = 7 --> 11101011 = EB
 # Or dos R[2] com os R[3]
 or $2, $3 # R[2] = R[2] | R[3] = 7 | 7 = 7 --> 11111011 = FB
 
+#### Tudo certo nos vetoriais até aqui
 
 
 
