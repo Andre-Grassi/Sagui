@@ -53,10 +53,13 @@ add $2, $3 # R[2] = R[2] + R[3] = 7 + 7 = 14 --> 01001011 = 4B
 sub $2, $3 # R[2] = R[2] - R[3] = 14 - 7 = 7 --> 01011011 = 5B
 
 
+## AND ##
 
-# Inicializa registradores 2 e 3 movendo o valor de R[1] (contém o 7) para eles
-movr $2, $1 # R[2] = R[1] = 7 --> 01101001 = 69
-movr $3, $2 # R[3] = R[2] = 7 --> 01101110 = 6E
+# And de R[2] com R[3]
+and $2, $3 # R[2] = R[2] & R[3] = 7 & 7 = 7 --> 01101011 = 6B
+
+
+# BRZR #
 
 
 ######## ADD ########
