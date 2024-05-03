@@ -17,7 +17,7 @@ movh 0000   # R[1] = {Imm + R[1](3:0)} = {0000 + ????} = 0000???? = ? --> 001000
 movl 0000   # R[1] = {R[1](7:4) + Imm.} = {0000 + 0000} = 00000000 = 0 --> 00110000 = 30 
 
 # Coloca o valor 112 no R[1]
-movh 0111   # R[1] = {Imm + R[1](3:0)} = {0111 + 0000} = 01110000 = 112 --> 00100111 = 27
+movh 0111   # R[1] = {Imm + R[1](3:0)} = {0111 + 0000} = 01110000 = 112 = 70 (hex) --> 00100111 = 27
 
 # Reseta R[1]
 movh 0000   # R[1] = {Imm + R[1](3:0)} = {0000 + 0000} = 00000000 = 0 --> 00100000 = 20
@@ -58,11 +58,74 @@ sub $2, $3 # R[2] = R[2] - R[3] = 14 - 7 = 7 --> 01011011 = 5B
 # And de R[2] com R[3]
 and $2, $3 # R[2] = R[2] & R[3] = 7 & 7 = 7 --> 01101011 = 6B
 
+########### Tudo certo até aqui no scalar ###########
+
 
 # BRZR #
 
 
-######## ADD ########
+######## Operações Vetoriais ########
+
+## MOV ##
+
+# Inicializa registradores 1 com 00000000
+movh 0000   # R[1] = {Imm + R[1](3:0)} = {0000 + ????} = 0000???? = ? --> 10100000 = A0
+movl 0000   # R[1] = {R[1](7:4) + Imm.} = {0000 + 0000} = 00000000 = 0 --> 10110000 = B0
+
+# Coloca o valor 112 nos R[1] 
+movh 0111   # R[1] = {Imm + R[1](3:0)} = {0111 + 0000} = 01110000 = 112 = 70 (hex) --> 10100111 = A7
+
+# Reseta os R[1]
+movh 0000   # R[1] = {Imm + R[1](3:0)} = {0000 + 0000} = 00000000 = 0 --> 10100000 = A0
+
+# Coloca o valor 7 nos R[1]
+movl 0111   # R[1] = {R[1](7:4) + Imm.} = {0000 + 0111} = 00000111 = 7 --> 10110111 = B7
+
+
+## STORE ##
+
+# Guarda os valores dos R[1] nas memórias na posição 0
+st $1, $0 # M[R[0]] = R[1] <=> M[0] = 7 --> 10010100 = 94
+
+
+## LOAD ##
+
+# Carrega os valores das memórias na posição 0 para os R[2] 
+ld $2, $0 # R[2] = M[R[0]] <=> R[2] = M[0] --> 10011000 = 98
+
+# Carrega os valores das memórias na posição 0 para os R[3]
+ld $3, $0 # R[3] = M[R[0]] <=> R[3] = M[0] --> 10011100 = 9C
+
+
+## ADD ##
+
+# Soma os R[2] com os R[3]
+add $2, $3 # R[2] = R[2] + R[3] = 7 + 7 = 14 --> 11001011 = CB
+
+
+## SUB ##
+
+# Subtrai os R[3] de R[2]
+sub $2, $3 # R[2] = R[2] - R[3] = 14 - 7 = 7 --> 11011011 = DB
+
+
+## AND ##
+
+# And dos R[2] com os R[3]
+and $2, $3 # R[2] = R[2] & R[3] = 7 & 7 = 7 --> 11101011 = EB
+
+## OR ##
+
+# Or dos R[2] com os R[3]
+or $2, $3 # R[2] = R[2] | R[3] = 7 | 7 = 7 --> 11111011 = FB
+
+
+
+
+
+
+
+
 
 # Soma de positivo com positivo
 add $2, $1  # R[2] = R[2] + R[1] = 7 + 7 = 14 --> 10011001 = 99
