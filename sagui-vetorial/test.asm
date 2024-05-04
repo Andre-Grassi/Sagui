@@ -135,12 +135,9 @@ or $2, $3 # R[2] = R[2] | R[3] = 7 | 7 = 7 --> 11111011 = FB
 movh 0000
 movl 0000
 
-# Guarda no endereço 0 o valor 0
-st $1, $1
-
 # Inicializa VR[2] e VR[3] com 0
-ld $2, $1
-ld $3, $1
+and $2, $1
+and $3, $1
 
 # Guarda no VR[1] o valor do endereço em que será guardado o valor da
 # variável de controle --> Endereço 30 (hex) = 48 (dec)
@@ -153,12 +150,27 @@ st $1, $2
 # Guarda no VR[2] o endereço da variável de controle
 ld $2, $2
 
-# Inicializa o valor da variável de controle com 10 nos VPE
-movh 0000
-movl 1010
+# Inicializa o valor da variável de controle com 0 nos VPE
+and $1, $3
 
 # Guarda no endereço 30 de cada RAM o valor da variável de controle
 st $1, $2
+
+# Coloca no VR[1] o endereço da variável j --> 31
+movl 0001
+movh 0011
+
+# Coloca no VR[2] o endereço da variável j
+st $1, $1
+ld $2, $1
+
+# Coloca no VR[1] o valor inicial da variável j
+movl 0000
+movh 0000
+
+# Guarda no endereço 31 o valor da variável j
+st $1, $2
+
 
 # Inicializa SR[1], SR[2] e SR[3] com 0
 and $1, $0
@@ -180,9 +192,31 @@ movl 1011
 # Início do laço de inicialização dos vetores
 brzr $1, ??
 
+# Pega o valor da variável j
+movl 0001
+movh 0011
+ld $2, $1
+
+# Pega o próximo valor do vetor
+add $2, $0
+
+# Carrega o valor da variável de controle
+movl 0000
+movh 0011
+ld $3, $1
+
+# Pega próxima posição em que será guardado o valor
+add $3, $0
+
+# Guarda o próximo valor do vetor na próxima posição
+st $2, $3
 
 
 
 
 
 
+
+## Nos VPE o endereço da variável de controle é o 30
+## e o valor do j é o 31
+## Nos SR o endereço da variável de controle é o 0
