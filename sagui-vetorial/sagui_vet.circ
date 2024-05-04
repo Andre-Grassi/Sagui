@@ -418,7 +418,11 @@
 20 30 27 20 37 14 8 c
 4b 5b 6b 30 21 71 0 0
 a0 b0 a7 a0 b7 94 88 8c
-cb db eb fb
+cb db eb fb 4*0 a0 b0 e9
+ed b0 a3 96 8a e7 96 b1
+a3 95 89 b0 a0 96 64 68
+6c 31 14 8 3b 0 b1 a3
+89 c8 b0 a3 8d cc 9b
 </a>
       <a name="label" val="Instrucoes"/>
     </comp>
@@ -841,6 +845,13 @@ cb db eb fb
       <a name="appearance" val="classic"/>
       <a name="label" val="RegWrite"/>
     </comp>
+    <comp lib="0" loc="(310,450)" name="Ground">
+      <a name="facing" val="east"/>
+      <a name="width" val="8"/>
+    </comp>
+    <comp lib="0" loc="(310,650)" name="Ground">
+      <a name="facing" val="east"/>
+    </comp>
     <comp lib="0" loc="(500,340)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="Clk"/>
@@ -856,6 +867,12 @@ cb db eb fb
     <comp lib="0" loc="(500,650)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="Clk"/>
+    </comp>
+    <comp lib="0" loc="(510,300)" name="Constant">
+      <a name="width" val="8"/>
+    </comp>
+    <comp lib="0" loc="(510,320)" name="Ground">
+      <a name="facing" val="west"/>
     </comp>
     <comp lib="0" loc="(550,360)" name="Ground"/>
     <comp lib="0" loc="(550,460)" name="Ground"/>
@@ -908,24 +925,20 @@ cb db eb fb
     <wire from="(200,670)" to="(260,670)"/>
     <wire from="(280,490)" to="(280,540)"/>
     <wire from="(280,540)" to="(280,650)"/>
-    <wire from="(300,450)" to="(350,450)"/>
+    <wire from="(300,450)" to="(310,450)"/>
     <wire from="(300,460)" to="(360,460)"/>
     <wire from="(300,470)" to="(360,470)"/>
     <wire from="(300,480)" to="(350,480)"/>
-    <wire from="(300,650)" to="(390,650)"/>
+    <wire from="(300,650)" to="(310,650)"/>
     <wire from="(300,660)" to="(400,660)"/>
     <wire from="(300,670)" to="(410,670)"/>
     <wire from="(300,680)" to="(420,680)"/>
-    <wire from="(350,300)" to="(350,450)"/>
-    <wire from="(350,300)" to="(520,300)"/>
     <wire from="(350,480)" to="(350,610)"/>
     <wire from="(350,610)" to="(520,610)"/>
     <wire from="(360,400)" to="(360,460)"/>
     <wire from="(360,400)" to="(520,400)"/>
     <wire from="(360,470)" to="(360,500)"/>
     <wire from="(360,500)" to="(520,500)"/>
-    <wire from="(390,320)" to="(390,650)"/>
-    <wire from="(390,320)" to="(520,320)"/>
     <wire from="(400,420)" to="(400,660)"/>
     <wire from="(400,420)" to="(520,420)"/>
     <wire from="(410,520)" to="(410,670)"/>
@@ -936,6 +949,8 @@ cb db eb fb
     <wire from="(500,440)" to="(520,440)"/>
     <wire from="(500,540)" to="(520,540)"/>
     <wire from="(500,650)" to="(520,650)"/>
+    <wire from="(510,300)" to="(520,300)"/>
+    <wire from="(510,320)" to="(520,320)"/>
     <wire from="(520,400)" to="(530,400)"/>
     <wire from="(580,300)" to="(620,300)"/>
     <wire from="(580,400)" to="(610,400)"/>

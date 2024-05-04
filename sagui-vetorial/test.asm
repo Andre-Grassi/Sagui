@@ -132,84 +132,86 @@ or $2, $3 # R[2] = R[2] | R[3] = 7 | 7 = 7 --> 11111011 = FB
 ## PROGRAMA DE SOMA ##
 
 # Inicializa VR[1] com 0
-movh 0000
-movl 0000
+movh 0000 # 10100000 = A0
+movl 0000 # 10110000 = B0
 
 # Inicializa VR[2] e VR[3] com 0
-and $2, $1
-and $3, $1
+and $2, $1 # 11101001 = E9
+and $3, $1 # 11101101 = ED
 
 # Guarda no VR[1] o valor do endereço em que será guardado o valor da
 # variável de controle --> Endereço 30 (hex) = 48 (dec)
-movl 0000
-movh 0011
+movl 0000 # 10110000 = B0
+movh 0011 # 10100011 = A3
 
 # Guarda no endereço 0 o endereço 30
-st $1, $2
+st $1, $2 # 10010110 = 96
 
 # Guarda no VR[2] o endereço da variável de controle
-ld $2, $2
+ld $2, $2 # 10001010 = 8A
 
 # Inicializa o valor da variável de controle com 0 nos VPE
-and $1, $3
+and $1, $3 # 11100111 = E7
 
 # Guarda no endereço 30 de cada RAM o valor da variável de controle
-st $1, $2
+st $1, $2 # 10010110 = 96
 
 # Coloca no VR[1] o endereço da variável j --> 31
-movl 0001
-movh 0011
+movl 0001 # 10110001 = B1
+movh 0011 # 10100011 = A3
 
 # Coloca no VR[2] o endereço da variável j
-st $1, $1
-ld $2, $1
+st $1, $1 # 10010101 = 95
+ld $2, $1 # 10001001 = 89
 
 # Coloca no VR[1] o valor inicial da variável j
-movl 0000
-movh 0000
+movl 0000 # 10110000 = B0
+movh 0000 # 10100000 = A0
 
 # Guarda no endereço 31 o valor da variável j
-st $1, $2
+st $1, $2 # 10010110 = 96
 
 
 # Inicializa SR[1], SR[2] e SR[3] com 0
-and $1, $0
-and $2, $0
-and $3, $0
+and $1, $0 # 01100100 = 64
+and $2, $0 # 01101000 = 68
+and $3, $0 # 01101100 = 6C
 
 # Coloca 1 no SR[1]
-movl 0001
+movl 0001 # 00110001 = 31
 
 # Guarda no endereço 0 o valor 1
-st $1, $0
+st $1, $0 # 00010100 = 14
 
 # Coloca 1 no SR[2]
-ld $2, $0
+ld $2, $0 # 00001000 = 08
 
 # Coloca o valor 11 (para controlar o laço) no SR[1]
-movl 1011
+movl 1011 # 00111011 = 3B
 
 # Início do laço de inicialização dos vetores
-brzr $1, ??
+brzr $1, ?? # 00000000
 
 # Pega o valor da variável j
-movl 0001
-movh 0011
-ld $2, $1
+movl 0001 # 10110001 = B1
+movh 0011 # 10100011 = A3
+ld $2, $1 # 10001001 = 89
 
 # Pega o próximo valor do vetor
-add $2, $0
+add $2, $0 # 11001000 = C8
 
 # Carrega o valor da variável de controle
-movl 0000
-movh 0011
-ld $3, $1
+movl 0000 # 10110000 = B0 
+movh 0011 # 10100011 = A3 
+ld $3, $1 # 10001101 = 8D 
 
 # Pega próxima posição em que será guardado o valor
-add $3, $0
+add $3, $0 # 11001100 = CC 
 
 # Guarda o próximo valor do vetor na próxima posição
-st $2, $3
+st $2, $3 # 10011011 = 9B 
+
+# Tudo certo até aqui
 
 
 
@@ -217,6 +219,6 @@ st $2, $3
 
 
 
-## Nos VPE o endereço da variável de controle é o 30
+## Nos VPE o endereço da variável de controle é o 30 e ele inicia em 0
 ## e o valor do j é o 31
-## Nos SR o endereço da variável de controle é o 0
+## Nos SR o endereço da variável de controle é o 0, e ele inicia em 11
