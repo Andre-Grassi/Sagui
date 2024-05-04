@@ -127,3 +127,40 @@ and $2, $3 # R[2] = R[2] & R[3] = 7 & 7 = 7 --> 11101011 = EB
 # Or dos R[2] com os R[3]
 or $2, $3 # R[2] = R[2] | R[3] = 7 | 7 = 7 --> 11111011 = FB
 
+
+
+## PROGRAMA DE SOMA ##
+
+# Inicializa VR[1] com 0
+movh 0000
+movl 0000
+
+# Guarda no endereço 0 o valor 0
+st $1, $1
+
+# Inicializa VR[2] e VR[3] com 0
+ld $2, $1
+ld $3, $1
+
+# Guarda no VR[1] o valor do endereço em que será guardado o valor da
+# variável de controle --> Endereço 30 (hex) = 48 (dec)
+movl 0000
+movh 0011
+
+# Guarda no endereço 0 o endereço 30
+st $1, $2
+
+# Guarda no VR[2] o endereço da variável de controle
+ld $2, $2
+
+# Inicializa o valor da variável de controle com 10 nos VPE
+movh 0000
+movl 1010
+
+# Guarda no endereço 30 de cada RAM o valor da variável de controle
+st $1, $2
+
+
+
+
+
