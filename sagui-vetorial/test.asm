@@ -160,6 +160,28 @@ movl 1010
 # Guarda no endereço 30 de cada RAM o valor da variável de controle
 st $1, $2
 
+# Inicializa SR[1], SR[2] e SR[3] com 0
+and $1, $0
+and $2, $0
+and $3, $0
+
+# Coloca 1 no SR[1]
+movl 0001
+
+# Guarda no endereço 0 o valor 1
+st $1, $0
+
+# Coloca 1 no SR[2]
+ld $2, $0
+
+# Coloca o valor 11 (para controlar o laço) no SR[1]
+movl 1011
+
+# Início do laço de inicialização dos vetores
+brzr $1, ??
+
+
+
 
 
 
