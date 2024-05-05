@@ -202,6 +202,9 @@ movl 0001 # 10110001 = B1
 movh 0011 # 10100011 = A3
 ld $2, $1 # 10001001 = 89
 
+add $2, $0 # 11001000 = C8
+add $2, $0 # 11001000 = C8
+
 # Início do laço de inicialização dos vetores
 brzr $1, ?? # 00000000
 
@@ -209,8 +212,6 @@ brzr $1, ?? # 00000000
 brzr
 # Pega o próximo valor do vetor
 ################ Não to conseguindo pegar o próximo valor certo, ta ficando sempre os mesmos
-add $2, $0 # 11001000 = C8
-add $2, $0 # 11001000 = C8
 
 # Guarda o próximo valor do vetor na próxima posição
 st $2, $3 # 10011011 = 9B 
@@ -222,9 +223,16 @@ movh 0000 # 10100000 = A0
 # Pega próxima posição em que será guardado o valor
 add $3, $1 # 11001101 = CD
 
-# Pega valor do jump = 3C = 00111100
-movh 0011 # 00100011 = 23
-movl 1111 # 00111111 = 3F
+# Coloca 6 no VR[1]
+movl 1000 # 10111000 = B8
+movh 0000 # 10100000 = A0
+
+# Soma 6 ao VR[2]
+add $2, $1 # 11001001 = C9
+
+# Pega valor do jump = 41 (hex)
+movh 0100 # 00100100 = 24
+movl 0001 # 00110001 = 31
 
 brzr $0, $1 # 01110001 = 71
 
