@@ -289,7 +289,7 @@ add $2, $0 # 11001000 = C8
 
 # Pega endereço do fim do laço
 movl 0000 # 00110000 = 30
-movh 0110 # 00100110 = 26
+movh 1001 # 00101001 = 29
 
 # Se o valor da variável de controle for 0, pula para o fim do laço
 brzr $3, $1 # 01111101 = 7D
