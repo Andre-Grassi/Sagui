@@ -238,9 +238,9 @@ movh 0000 # 10100000 = A0
 # Soma 8 ao VR[2]
 add $2, $1 # 11001001 = C9
 
-# Pega valor do jump = 45 (hex)
+# Pega valor do jump = 43 (hex)
 movh 0100 # 00100100 = 24
-movl 0101 # 00110101 = 35
+movl 0011 # 00110011 = 33
 
 brzr $0, $1 # 01110001 = 71
 
