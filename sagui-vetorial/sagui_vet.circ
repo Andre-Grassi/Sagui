@@ -65,7 +65,7 @@
     <a name="appearance" val="logisim_evolution"/>
     <a name="circuit" val="main"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="simulationFrequency" val="32.0"/>
+    <a name="simulationFrequency" val="1.0"/>
     <appear>
       <rect height="20" stroke="none" width="200" x="60" y="60"/>
       <rect fill="none" height="30" stroke="#000000" stroke-width="2" width="200" x="60" y="50"/>
@@ -446,10 +446,10 @@ a0 b0 a7 a0 b7 94 88 8c
 cb db eb fb 4*0 a0 b0 e9
 ed b0 a3 96 8a e7 96 b1
 a3 95 89 b0 a0 96 64 68
-6c 31 14 8 3b b0 a3 8d
-cc b1 a3 89 c8 c8 0 9b
-b4 a0 cd b8 a0 c9 24 31
-71
+6c 31 14 8 33 14 c b0
+a3 8d cc b1 a3 89 c8 c8
+30 26 7d 56 9b b4 a0 cd
+b8 a0 c9 24 31 71
 </a>
       <a name="label" val="Instrucoes"/>
     </comp>

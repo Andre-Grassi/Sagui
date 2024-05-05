@@ -186,8 +186,14 @@ st $1, $0 # 00010100 = 14
 # Coloca 1 no SR[2]
 ld $2, $0 # 00001000 = 08
 
-# Coloca o valor 11 (para controlar o laço) no SR[1]
-movl 1011 # 00111011 = 3B
+# Coloca o valor 3 (para controlar o laço) no SR[1] e depois passa para o SR[3]
+movl 0011 # 00110011 = 33
+
+# Guarda no endereço 0 o valor 3
+st $1, $0 # 00010100 = 14
+
+# Coloca 3 no SR[3]
+ld $3, $0 # 00001100 = 0C
 
 # Carrega o valor da variável de controle nos VR
 movl 0000 # 10110000 = B0 
@@ -197,21 +203,23 @@ ld $3, $1 # 10001101 = 8D
 # Pega próxima posição em que será guardado o valor
 add $3, $0 # 11001100 = CC 
 
-# Pega o valor da variável j
-movl 0001 # 10110001 = B1
-movh 0011 # 10100011 = A3
+# Coloca 0 no VR[2]
+movl 0001 # 10110001 = B1 ## Esses comandos n vao mudar nada
+movh 0011 # 10100011 = A3 ## Tbm n muda nada
 ld $2, $1 # 10001001 = 89
 
 add $2, $0 # 11001000 = C8
 add $2, $0 # 11001000 = C8
 
-# Início do laço de inicialização dos vetores
-brzr $1, ?? # 00000000
+# Coloca um endereço bem pra frente só pra testar
+movl 0000 # 00110000 = 30
+movh 0110 # 00100110 = 26
 
-# Loop de soma para inicializar o A
-brzr
-# Pega o próximo valor do vetor
-################ Não to conseguindo pegar o próximo valor certo, ta ficando sempre os mesmos
+# Início do laço de inicialização do vetor A
+brzr $3, $1 # 01111101 = 7D
+
+# Subtrai 1 do SR[3] (variável de controle do laço)
+sub $3, $2 # 01011110 = 5E
 
 # Guarda o próximo valor do vetor na próxima posição
 st $2, $3 # 10011011 = 9B 
@@ -223,16 +231,16 @@ movh 0000 # 10100000 = A0
 # Pega próxima posição em que será guardado o valor
 add $3, $1 # 11001101 = CD
 
-# Coloca 6 no VR[1]
+# Coloca 8 no VR[1]
 movl 1000 # 10111000 = B8
 movh 0000 # 10100000 = A0
 
-# Soma 6 ao VR[2]
+# Soma 8 ao VR[2]
 add $2, $1 # 11001001 = C9
 
-# Pega valor do jump = 41 (hex)
+# Pega valor do jump = 45 (hex)
 movh 0100 # 00100100 = 24
-movl 0001 # 00110001 = 31
+movl 0101 # 00110101 = 35
 
 brzr $0, $1 # 01110001 = 71
 
