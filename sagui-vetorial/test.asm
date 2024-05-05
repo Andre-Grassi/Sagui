@@ -251,6 +251,7 @@ brzr $0, $1 # 01110001 = 71
 # Inicialização do B
 
 # Coloca o valor 3 (para controlar o laço) no SR[1] e depois passa para o SR[3]
+movh 0000 # 00100000 = 20
 movl 0011 # 00110011 = 33
 
 # Guarda no endereço 0 o valor 3
@@ -313,9 +314,9 @@ movh 0000 # 10100000 = A0
 # Soma 8 ao VR[2]
 add $2, $1 # 11001001 = C9
 
-# Pega valor do jump = 74 (hex)
+# Pega valor do jump = 75 (hex)
 movh 0111 # 00100111 = 27
-movl 0100 # 00110100 = 34
+movl 0101 # 00110101 = 35
 
 brzr $0, $1 # 01110001 = 71
 
