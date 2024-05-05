@@ -452,8 +452,12 @@ a3 8d cc b1 a3 89 c8 c8
 b8 a0 c9 24 33 71 17*0 20
 33 14 c b0 a3 8d ba a0
 cd cc b1 a3 89 b1 a0 c9
-c8 c8 30 26 7d 5e 9b b4
+c8 c8 30 29 7d 5e 9b b4
 a0 cd b8 a0 c9 27 35 71
+13*0 20 33 14 c b0 a3 8d
+b4 a1 cd cc b1 a3 89 30
+2b 7d 5e 9b b4 a0 cd 29
+3e 71
 </a>
       <a name="label" val="Instrucoes"/>
     </comp>
