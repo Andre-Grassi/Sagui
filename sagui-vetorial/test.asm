@@ -211,11 +211,13 @@ ld $2, $1 # 10001001 = 89
 add $2, $0 # 11001000 = C8
 add $2, $0 # 11001000 = C8
 
-# Coloca um endereço bem pra frente só pra testar
+# Início do laço de inicialização do vetor A
+
+# Pega endereço do fim do laço
 movl 0000 # 00110000 = 30
 movh 0110 # 00100110 = 26
 
-# Início do laço de inicialização do vetor A
+# Se o valor da variável de controle for 0, pula para o fim do laço
 brzr $3, $1 # 01111101 = 7D
 
 # Subtrai 1 do SR[3] (variável de controle do laço)
@@ -246,6 +248,76 @@ brzr $0, $1 # 01110001 = 71
 
 # Tudo certo até aqui
 
+# Inicialização do B
+
+# Coloca o valor 3 (para controlar o laço) no SR[1] e depois passa para o SR[3]
+movl 0011 # 00110011 = 33
+
+# Guarda no endereço 0 o valor 3
+st $1, $0 # 00010100 = 14
+
+# Coloca 3 no SR[3]
+ld $3, $0 # 00001100 = 0C
+
+# Carrega o valor da variável de controle nos VR
+movl 0000 # 10110000 = B0 
+movh 0011 # 10100011 = A3 
+ld $3, $1 # 10001101 = 8D 
+
+# Pega próxima posição em que será guardado o valor
+# Vetor inicia no endereço 0a
+movl 1010 # 10111010 = BA
+movh 0000 # 10100000 = A0
+add $3, $1 # 11001101 = CD
+add $3, $0 # 11001100 = CC 
+
+# Coloca 0 no VR[2]
+movl 0001 # 10110001 = B1 ## Esses comandos n vao mudar nada
+movh 0011 # 10100011 = A3 ## Tbm n muda nada
+ld $2, $1 # 10001001 = 89
+
+# Coloca 1 no VR[2]
+movl 0001 # 10110001 = B1
+movh 0000 # 10100000 = A0
+add $2, $1 # 11001001 = C9
+
+add $2, $0 # 11001000 = C8
+add $2, $0 # 11001000 = C8
+
+# Início do laço de inicialização do vetor B
+
+# Pega endereço do fim do laço
+movl 0000 # 00110000 = 30
+movh 0110 # 00100110 = 26
+
+# Se o valor da variável de controle for 0, pula para o fim do laço
+brzr $3, $1 # 01111101 = 7D
+
+# Subtrai 1 do SR[3] (variável de controle do laço)
+sub $3, $2 # 01011110 = 5E
+
+# Guarda o próximo valor do vetor na próxima posição
+st $2, $3 # 10011011 = 9B 
+
+# Coloca o valor 4 no VR[1]
+movl 0100 # 10110100 = B4
+movh 0000 # 10100000 = A0
+
+# Pega próxima posição em que será guardado o valor
+add $3, $1 # 11001101 = CD
+
+# Coloca 8 no VR[1]
+movl 1000 # 10111000 = B8
+movh 0000 # 10100000 = A0
+
+# Soma 8 ao VR[2]
+add $2, $1 # 11001001 = C9
+
+# Pega valor do jump = 74 (hex)
+movh 0111 # 00100111 = 27
+movl 0100 # 00110100 = 34
+
+brzr $0, $1 # 01110001 = 71
 
 
 
