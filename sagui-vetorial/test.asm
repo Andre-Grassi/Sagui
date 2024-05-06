@@ -379,6 +379,96 @@ movl 1110 # 00111110 = 3E
 brzr $0, $1 # 01110001 = 71
 
 
+# Soma de A e B, guardando no vetor R
+
+# Coloca o valor 3 (para controlar o laço) no SR[1] e depois passa para o SR[3]
+movh 0000 # 00100000 = 20
+movl 0011 # 00110011 = 33
+
+# Guarda no endereço 0 o valor 3
+st $1, $0 # 00010100 = 14
+
+# Coloca 3 no SR[3]
+ld $3, $0 # 00001100 = 0C
+
+# Carrega o valor da variável de controle nos VR
+movl 0000 # 10110000 = B0 
+movh 0011 # 10100011 = A3 
+ld $3, $1 # 10001101 = 8D 
+
+# Pega próxima posição em que será guardado o valor
+# Vetor inicia no endereço 14
+movl 0100 # 10110100 = B4
+movh 0001 # 10100001 = A1
+add $3, $1 # 11001101 = CD
+add $3, $0 # 11001100 = CC 
+
+# Coloca 0 no VR[2]
+movl 0001 # 10110001 = B1 ## Esses comandos n vao mudar nada
+movh 0011 # 10100011 = A3 ## Tbm n muda nada
+ld $2, $1 # 10001001 = 89
+
+# Início do laço de soma
+
+# Pega endereço do fim do laço b0 ???????
+movl 0000 # 00110000 = 30 ?????
+movh 1011 # 00101011 = 2B ?????
+
+# Se o valor da variável de controle for 0, pula para o fim do laço
+brzr $3, $1 # 01111101 = 7D
+
+# Subtrai 1 do SR[3] (variável de controle do laço)
+sub $3, $2 # 01011110 = 5E
+
+# Pega valor do vetor A
+
+# Carrega o valor da variável de controle nos VR
+movl 0000 # 10110000 = B0 
+movh 0011 # 10100011 = A3 
+ld $3, $1 # 10001101 = 8D 
+ld $2, $1 # 
+
+# Pega posição do A
+# Vetor inicia no endereço 0
+movl 0000 # 10110100 = B4
+movh 0000 # 10100001 = A1
+add $3, $1 # 11001101 = CD
+add $3, $0 # 11001100 = CC 
+
+# Pega posição do B
+# Vetor inicia no endereço 0
+movl 0000 # 10110100 = B4
+movh 0000 # 10100001 = A1
+add $2, $1
+add $2, $0
+
+# Soma os valores de A e B
+ld $2, $2
+ld $3, $3
+add $2, $3
+
+# Pega posição do R
+# Vetor inicia no endereço 14
+movl 
+movh 
+add $3, $1 # 11001101 = CD
+add $3, $0 # 11001100 = CC 
+
+# Guarda o próximo valor do vetor na próxima posição
+st $2, $3 # 10011011 = 9B 
+
+# Coloca o valor 4 no VR[1]
+movl 0100 # 10110100 = B4
+movh 0000 # 10100000 = A0
+
+# Pega próxima posição em que será guardado o valor
+add $3, $1 # 11001101 = CD
+
+# Pega valor do jump = 9E (hex)
+movh 1001 # 00101001 = 29
+movl 1110 # 00111110 = 3E
+
+brzr $0, $1 # 01110001 = 71
 
 
 
