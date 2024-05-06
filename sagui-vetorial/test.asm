@@ -427,16 +427,15 @@ sub $3, $2 # 01011110 = 5E
 movl 0000 # 10110000 = B0
 movh 0000 # 10100000 = A0
 
-# Avança para iteração atual
+# Avança para posição atual
 add $1, $2 # 11000110 = C6
-
 # Avança o ponteiro de acordo com o VPE
 add $1, $0 # 11000100 = C4
 
 # Carrega o valor do A no VR[3]
 ld $3, $1 # 10001101 = 8D
 
-# Guarda iteração atual em endereço aleatório
+# Guarda posição atual em endereço aleatório
 movl 0000 # 10110000 = B0
 movh 0010 # 10100010 = A2
 st $2, $1 # 10011001 = 99
@@ -445,9 +444,8 @@ st $2, $1 # 10011001 = 99
 movl 1010 # 10111010 = BA
 movh 0000 # 10100000 = A0
 
-# Avança para iteração atual
+# Avança para posição atual
 add $1, $2 # 11000110 = C6
-
 # Avança o ponteiro de acordo com o VPE
 add $1, $0 # 11000100 = C4
 
@@ -457,7 +455,7 @@ ld $2, $1 # 10001001 = 89
 # Faz a soma
 add $3, $2 # 11001110 = CE
 
-# Pega iteração atual em endereço aleatório
+# Pega posição atual em endereço aleatório
 movl 0000 # 10110000 = B0
 movh 0010 # 10100010 = A2
 ld $2, $1 # 10001001 = 89
@@ -466,16 +464,15 @@ ld $2, $1 # 10001001 = 89
 movl 0100 # 10110100 = B4
 movh 0001 # 10100001 = A1
 
-# Avança para iteração atual
+# Avança para posição atual
 add $1, $2 # 11000110 = C6
-
 # Avança o ponteiro de acordo com o VPE
 add $1, $0 # 11000100 = C4
 
 # Guarda o valor da soma
 st $3, $1 # 10011101 = 9D
 
-# Carrega iteração atual no VR[2]
+# Carrega posição atual no VR[2]
 movl 0000 # 10110000 = B0
 movh 0010 # 10100010 = A2
 ld $2, $1 # 10001001 = 89
