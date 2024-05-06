@@ -65,7 +65,7 @@
     <a name="appearance" val="logisim_evolution"/>
     <a name="circuit" val="main"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="simulationFrequency" val="32.0"/>
+    <a name="simulationFrequency" val="1.0"/>
     <appear>
       <rect height="20" stroke="none" width="200" x="60" y="60"/>
       <rect fill="none" height="30" stroke="#000000" stroke-width="2" width="200" x="60" y="50"/>
@@ -458,7 +458,13 @@ a0 cd b8 a0 c9 27 35 71
 13*0 20 33 14 c b0 a3 8d
 b4 a1 cd cc b1 a3 89 30
 2b 7d 5e 9b b4 a0 cd 29
-3e 71
+3e 71 7*0 20 33 14 c b0
+a3 8d b4 a1 cd cc b0 a0
+95 89 30 2b 7d 5e b0 a0
+c6 c4 8d b0 a2 99 ba a0
+c6 c4 89 ce b0 a2 89 b4
+a1 c6 c4 9d b0 a2 89 b4
+a0 c9 2b 3f 71
 </a>
       <a name="label" val="Instrucoes"/>
     </comp>
@@ -880,9 +886,10 @@ b4 a1 cd cc b1 a3 89 30
       <a name="label" val="Clk"/>
     </comp>
     <comp lib="0" loc="(510,300)" name="Constant">
+      <a name="value" val="0x0"/>
       <a name="width" val="8"/>
     </comp>
-    <comp lib="0" loc="(510,320)" name="Ground">
+    <comp lib="0" loc="(510,320)" name="Power">
       <a name="facing" val="west"/>
     </comp>
     <comp lib="0" loc="(550,360)" name="Ground"/>
