@@ -435,7 +435,7 @@ add $1, $0 # 11000100 = C4
 # Carrega o valor do A no VR[3]
 ld $3, $1 # 10001101 = 8D
 
-# Guarda posição atual em endereço aleatório
+# Guarda posição atual no endereço 20 (hex)
 movl 0000 # 10110000 = B0
 movh 0010 # 10100010 = A2
 st $2, $1 # 10011001 = 99
@@ -455,7 +455,7 @@ ld $2, $1 # 10001001 = 89
 # Faz a soma
 add $3, $2 # 11001110 = CE
 
-# Pega posição atual em endereço aleatório
+# Pega posição atual que está no endereço 20 (hex)
 movl 0000 # 10110000 = B0
 movh 0010 # 10100010 = A2
 ld $2, $1 # 10001001 = 89
