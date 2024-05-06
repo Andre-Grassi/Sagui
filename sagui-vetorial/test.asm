@@ -403,12 +403,14 @@ movh 0001 # 10100001 = A1
 add $3, $1 # 11001101 = CD
 add $3, $0 # 11001100 = CC 
 
-# Coloca 0 no VR[2]
-movl 0001 # 10110001 = B1 ## Esses comandos n vao mudar nada
-movh 0011 # 10100011 = A3 ## Tbm n muda nada
+# Coloca 0 no VR[2] e VR[1]
+movl 0000 # 10110000 = B0
+movh 0000 # 10100000 = A0
+st $1, $1 # 10010101 = 95
 ld $2, $1 # 10001001 = 89
 
 # Início do laço de soma
+
 
 # Pega endereço do fim do laço b0 ???????
 movl 0000 # 00110000 = 30 ?????
@@ -420,56 +422,80 @@ brzr $3, $1 # 01111101 = 7D
 # Subtrai 1 do SR[3] (variável de controle do laço)
 sub $3, $2 # 01011110 = 5E
 
-# Pega valor do vetor A
+# Pega endereço do vetor A
+# Acho que não precisa pois o $1 já vale 0
+movl 0000 # 10110000 = B0
+movh 0000 # 10100000 = A0
 
-# Carrega o valor da variável de controle nos VR
-movl 0000 # 10110000 = B0 
-movh 0011 # 10100011 = A3 
-ld $3, $1 # 10001101 = 8D 
-ld $2, $1 # 
+# Avança para iteração atual
+add $1, $2 # 11000110 = C6
 
-# Pega posição do A
-# Vetor inicia no endereço 0
-movl 0000 # 10110100 = B4
-movh 0000 # 10100001 = A1
-add $3, $1 # 11001101 = CD
-add $3, $0 # 11001100 = CC 
+# Avança o ponteiro de acordo com o VPE
+add $1, $0 # 11000100 = C4
 
-# Pega posição do B
-# Vetor inicia no endereço 0
-movl 0000 # 10110100 = B4
-movh 0000 # 10100001 = A1
-add $2, $1
-add $2, $0
+# Carrega o valor do A no VR[3]
+ld $3, $1 # 10001101 = 8D
 
-# Soma os valores de A e B
-ld $2, $2
-ld $3, $3
-add $2, $3
+# Guarda iteração atual em endereço aleatório
+movl 0000 # 10110000 = B0
+movh 0010 # 10100010 = A2
+st $2, $1 # 10011001 = 99
 
-# Pega posição do R
-# Vetor inicia no endereço 14
-movl 
-movh 
-add $3, $1 # 11001101 = CD
-add $3, $0 # 11001100 = CC 
+# Pega endereço do vetor B
+movl 1010 # 10111010 = BA
+movh 0000 # 10100000 = A0
 
-# Guarda o próximo valor do vetor na próxima posição
-st $2, $3 # 10011011 = 9B 
+# Avança para iteração atual
+add $1, $2 # 11000110 = C6
 
-# Coloca o valor 4 no VR[1]
+# Avança o ponteiro de acordo com o VPE
+add $1, $0 # 11000100 = C4
+
+# Carrega o valor do B no VR[2]
+ld $2, $1 # 10001001 = 89
+
+# Faz a soma
+add $3, $2 # 11001110 = CE
+
+# Pega iteração atual em endereço aleatório
+movl 0000 # 10110000 = B0
+movh 0010 # 10100010 = A2
+ld $2, $1 # 10001001 = 89
+
+# Pega endereço do vetor R
+movl 0100 # 10110100 = B4
+movh 0001 # 10100001 = A1
+
+# Avança para iteração atual
+add $1, $2 # 11000110 = C6
+
+# Avança o ponteiro de acordo com o VPE
+add $1, $0 # 11000100 = C4
+
+# Guarda o valor da soma
+st $3, $1 # 10011101 = 9D
+
+# Coloca 0 no VR[1]
+movl 0000 # 10110000 = B0
+movh 0000 # 10100000 = A0
+
+# Carrega 0 no VR[2]
+ld $2, $1 # 10001001 = 89
+ 
+# Coloca 4 no VR[1]
 movl 0100 # 10110100 = B4
 movh 0000 # 10100000 = A0
 
-# Pega próxima posição em que será guardado o valor
-add $3, $1 # 11001101 = CD
+# Guarda o 4 no VR[2]
+add $2, $1 # 11001001 = C9
 
-# Pega valor do jump = 9E (hex)
-movh 1001 # 00101001 = 29
-movl 1110 # 00111110 = 3E
+# Pega valor do jump = BF (hex)
+movh 1011 # 00101011 = 2B
+movl 1111 # 00111111 = 3F
 
 brzr $0, $1 # 01110001 = 71
 
+## TA DANDO ERRADO SÓ AS SOMAS DAS ÚLTIMAS 2 POSIÇÕES
 
 
 ## Nos VPE o endereço da variável de controle é o 30 e ele inicia em 0

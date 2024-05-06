@@ -65,7 +65,7 @@
     <a name="appearance" val="logisim_evolution"/>
     <a name="circuit" val="main"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="simulationFrequency" val="1.0"/>
+    <a name="simulationFrequency" val="32.0"/>
     <appear>
       <rect height="20" stroke="none" width="200" x="60" y="60"/>
       <rect fill="none" height="30" stroke="#000000" stroke-width="2" width="200" x="60" y="50"/>
@@ -413,14 +413,10 @@
       <a name="asyncread" val="true"/>
       <a name="labelvisible" val="true"/>
     </comp>
-    <comp lib="4" loc="(1900,1080)" name="RAM">
-      <a name="appearance" val="classic"/>
-      <a name="asyncread" val="true"/>
-      <a name="labelvisible" val="true"/>
-    </comp>
     <comp lib="4" loc="(1900,350)" name="RAM">
       <a name="appearance" val="classic"/>
       <a name="asyncread" val="true"/>
+      <a name="labelfont" val="SansSerif bold 17"/>
       <a name="labelvisible" val="true"/>
     </comp>
     <comp lib="4" loc="(1900,620)" name="RAM">
@@ -428,7 +424,12 @@
       <a name="asyncread" val="true"/>
       <a name="labelvisible" val="true"/>
     </comp>
-    <comp lib="4" loc="(1900,860)" name="RAM">
+    <comp lib="4" loc="(1910,1080)" name="RAM">
+      <a name="appearance" val="classic"/>
+      <a name="asyncread" val="true"/>
+      <a name="labelvisible" val="true"/>
+    </comp>
+    <comp lib="4" loc="(1910,860)" name="RAM">
       <a name="appearance" val="classic"/>
       <a name="asyncread" val="true"/>
       <a name="labelvisible" val="true"/>
@@ -642,9 +643,9 @@ b4 a1 cd cc b1 a3 89 30
     <wire from="(1770,590)" to="(1770,710)"/>
     <wire from="(1770,710)" to="(1900,710)"/>
     <wire from="(1770,840)" to="(1770,950)"/>
-    <wire from="(1770,950)" to="(1900,950)"/>
+    <wire from="(1770,950)" to="(1910,950)"/>
     <wire from="(1780,1060)" to="(1780,1170)"/>
-    <wire from="(1780,1170)" to="(1900,1170)"/>
+    <wire from="(1780,1170)" to="(1910,1170)"/>
     <wire from="(1780,1670)" to="(1780,1680)"/>
     <wire from="(1780,1680)" to="(1870,1680)"/>
     <wire from="(1780,1690)" to="(1780,1700)"/>
@@ -652,7 +653,7 @@ b4 a1 cd cc b1 a3 89 30
     <wire from="(1830,1700)" to="(1830,1780)"/>
     <wire from="(1830,1700)" to="(1870,1700)"/>
     <wire from="(1850,1070)" to="(1850,1090)"/>
-    <wire from="(1850,1090)" to="(1900,1090)"/>
+    <wire from="(1850,1090)" to="(1910,1090)"/>
     <wire from="(1850,1120)" to="(1860,1120)"/>
     <wire from="(1850,1150)" to="(1860,1150)"/>
     <wire from="(1850,1590)" to="(1850,1720)"/>
@@ -667,13 +668,13 @@ b4 a1 cd cc b1 a3 89 30
     <wire from="(1850,660)" to="(1860,660)"/>
     <wire from="(1850,690)" to="(1860,690)"/>
     <wire from="(1850,850)" to="(1850,870)"/>
-    <wire from="(1850,870)" to="(1900,870)"/>
+    <wire from="(1850,870)" to="(1910,870)"/>
     <wire from="(1850,900)" to="(1860,900)"/>
     <wire from="(1850,930)" to="(1860,930)"/>
     <wire from="(1860,1120)" to="(1860,1130)"/>
-    <wire from="(1860,1130)" to="(1900,1130)"/>
+    <wire from="(1860,1130)" to="(1910,1130)"/>
     <wire from="(1860,1140)" to="(1860,1150)"/>
-    <wire from="(1860,1140)" to="(1900,1140)"/>
+    <wire from="(1860,1140)" to="(1910,1140)"/>
     <wire from="(1860,390)" to="(1860,400)"/>
     <wire from="(1860,400)" to="(1900,400)"/>
     <wire from="(1860,410)" to="(1860,420)"/>
@@ -683,23 +684,23 @@ b4 a1 cd cc b1 a3 89 30
     <wire from="(1860,680)" to="(1860,690)"/>
     <wire from="(1860,680)" to="(1900,680)"/>
     <wire from="(1860,900)" to="(1860,910)"/>
-    <wire from="(1860,910)" to="(1900,910)"/>
+    <wire from="(1860,910)" to="(1910,910)"/>
     <wire from="(1860,920)" to="(1860,930)"/>
-    <wire from="(1860,920)" to="(1900,920)"/>
-    <wire from="(1880,1150)" to="(1900,1150)"/>
+    <wire from="(1860,920)" to="(1910,920)"/>
+    <wire from="(1880,1150)" to="(1910,1150)"/>
     <wire from="(1880,290)" to="(1880,420)"/>
     <wire from="(1880,420)" to="(1880,690)"/>
     <wire from="(1880,420)" to="(1900,420)"/>
     <wire from="(1880,690)" to="(1880,930)"/>
     <wire from="(1880,690)" to="(1900,690)"/>
     <wire from="(1880,930)" to="(1880,1150)"/>
-    <wire from="(1880,930)" to="(1900,930)"/>
+    <wire from="(1880,930)" to="(1910,930)"/>
     <wire from="(2110,1720)" to="(2130,1720)"/>
     <wire from="(2130,1720)" to="(2130,1880)"/>
-    <wire from="(2140,1170)" to="(2170,1170)"/>
     <wire from="(2140,440)" to="(2170,440)"/>
     <wire from="(2140,710)" to="(2170,710)"/>
-    <wire from="(2140,950)" to="(2170,950)"/>
+    <wire from="(2150,1170)" to="(2170,1170)"/>
+    <wire from="(2150,950)" to="(2170,950)"/>
     <wire from="(2160,1490)" to="(2160,2100)"/>
     <wire from="(2170,1170)" to="(2170,1260)"/>
     <wire from="(2170,440)" to="(2170,530)"/>
