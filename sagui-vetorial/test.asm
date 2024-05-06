@@ -475,18 +475,16 @@ add $1, $0 # 11000100 = C4
 # Guarda o valor da soma
 st $3, $1 # 10011101 = 9D
 
-# Coloca 0 no VR[1]
+# Carrega iteração atual no VR[2]
 movl 0000 # 10110000 = B0
-movh 0000 # 10100000 = A0
-
-# Carrega 0 no VR[2]
+movh 0010 # 10100010 = A2
 ld $2, $1 # 10001001 = 89
  
 # Coloca 4 no VR[1]
 movl 0100 # 10110100 = B4
 movh 0000 # 10100000 = A0
 
-# Guarda o 4 no VR[2]
+# Soma 4 com o VR[2]
 add $2, $1 # 11001001 = C9
 
 # Pega valor do jump = BF (hex)
