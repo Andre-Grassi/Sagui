@@ -7,7 +7,7 @@
       <a name="appearance" val="classic"/>
     </tool>
     <tool name="Power">
-      <a name="facing" val="west"/>
+      <a name="facing" val="south"/>
     </tool>
     <tool name="Ground">
       <a name="facing" val="west"/>
@@ -65,7 +65,7 @@
     <a name="appearance" val="logisim_evolution"/>
     <a name="circuit" val="main"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="simulationFrequency" val="1.0"/>
+    <a name="simulationFrequency" val="64.0"/>
     <appear>
       <rect height="20" stroke="none" width="200" x="60" y="60"/>
       <rect fill="none" height="30" stroke="#000000" stroke-width="2" width="200" x="60" y="50"/>
@@ -244,15 +244,6 @@
     <comp lib="0" loc="(330,1770)" name="Tunnel">
       <a name="label" val="Clk"/>
     </comp>
-    <comp lib="0" loc="(350,1710)" name="Ground"/>
-    <comp lib="0" loc="(510,1590)" name="Constant">
-      <a name="width" val="2"/>
-    </comp>
-    <comp lib="0" loc="(530,1590)" name="Tunnel">
-      <a name="label" val="R1"/>
-      <a name="labelfont" val="SansSerif bold 10"/>
-      <a name="width" val="2"/>
-    </comp>
     <comp lib="0" loc="(720,1330)" name="Tunnel">
       <a name="label" val="AluOp"/>
       <a name="labelfont" val="SansSerif bold 12"/>
@@ -363,6 +354,14 @@
       <a name="label" val="SelectR1"/>
       <a name="labelfont" val="SansSerif bold 9"/>
     </comp>
+    <comp lib="0" loc="(930,1540)" name="Constant">
+      <a name="width" val="2"/>
+    </comp>
+    <comp lib="0" loc="(950,1540)" name="Tunnel">
+      <a name="label" val="R1"/>
+      <a name="labelfont" val="SansSerif bold 10"/>
+      <a name="width" val="2"/>
+    </comp>
     <comp lib="1" loc="(1620,1490)" name="AND Gate"/>
     <comp lib="2" loc="(1160,2030)" name="Multiplexer">
       <a name="facing" val="west"/>
@@ -467,6 +466,9 @@ a1 c6 c4 9d b0 a2 89 b4
 a0 c9 2b 3f 71
 </a>
       <a name="label" val="Instrucoes"/>
+    </comp>
+    <comp lib="5" loc="(350,1710)" name="Button">
+      <a name="facing" val="north"/>
     </comp>
     <comp lib="8" loc="(1260,1975)" name="Text">
       <a name="text" val="pc = pc + 4"/>
@@ -726,7 +728,6 @@ a0 c9 2b 3f 71
     <wire from="(430,1330)" to="(430,1540)"/>
     <wire from="(430,1330)" to="(450,1330)"/>
     <wire from="(430,1540)" to="(760,1540)"/>
-    <wire from="(510,1590)" to="(530,1590)"/>
     <wire from="(670,1330)" to="(720,1330)"/>
     <wire from="(670,1350)" to="(790,1350)"/>
     <wire from="(670,1370)" to="(1320,1370)"/>
@@ -775,6 +776,7 @@ a0 c9 2b 3f 71
     <wire from="(900,930)" to="(1010,930)"/>
     <wire from="(910,1590)" to="(910,1610)"/>
     <wire from="(910,1590)" to="(920,1590)"/>
+    <wire from="(930,1540)" to="(950,1540)"/>
     <wire from="(930,1630)" to="(1020,1630)"/>
     <wire from="(940,1940)" to="(1210,1940)"/>
     <wire from="(960,1110)" to="(1010,1110)"/>
