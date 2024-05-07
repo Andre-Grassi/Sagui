@@ -65,7 +65,7 @@
     <a name="appearance" val="logisim_evolution"/>
     <a name="circuit" val="main"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="simulationFrequency" val="64.0"/>
+    <a name="simulationFrequency" val="1.0"/>
     <appear>
       <rect height="20" stroke="none" width="200" x="60" y="60"/>
       <rect fill="none" height="30" stroke="#000000" stroke-width="2" width="200" x="60" y="50"/>
@@ -444,12 +444,11 @@
 4b 5b 6b 30 21 71 0 0
 a0 b0 a7 a0 b7 94 88 8c
 cb db eb fb 4*0 a0 b0 e9
-ed b0 a3 96 8a e7 96 b1
-a3 95 89 b0 a0 96 64 68
+ed b0 a3 96 8a e7 64 68
 6c 31 14 8 33 14 c b0
 a3 8d cc b1 a3 89 c8 c8
-30 26 7d 5e 9b b4 a0 cd
-b8 a0 c9 24 33 71 17*0 20
+39 24 7d 5e 9b b4 a0 cd
+b8 a0 c9 23 3b 71 18*0 20
 33 14 c b0 a3 8d ba a0
 cd cc b1 a3 89 b1 a0 c9
 c8 c8 30 29 7d 5e 9b b4
@@ -871,10 +870,6 @@ a0 c9 2b 3f 71
     <comp lib="0" loc="(310,650)" name="Ground">
       <a name="facing" val="east"/>
     </comp>
-    <comp lib="0" loc="(500,340)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="Clk"/>
-    </comp>
     <comp lib="0" loc="(500,440)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="Clk"/>
@@ -887,12 +882,9 @@ a0 c9 2b 3f 71
       <a name="facing" val="east"/>
       <a name="label" val="Clk"/>
     </comp>
-    <comp lib="0" loc="(510,300)" name="Constant">
+    <comp lib="0" loc="(550,300)" name="Constant">
       <a name="value" val="0x0"/>
       <a name="width" val="8"/>
-    </comp>
-    <comp lib="0" loc="(510,320)" name="Power">
-      <a name="facing" val="west"/>
     </comp>
     <comp lib="0" loc="(550,360)" name="Ground"/>
     <comp lib="0" loc="(550,460)" name="Ground"/>
@@ -926,9 +918,6 @@ a0 c9 2b 3f 71
       <a name="select" val="2"/>
       <a name="selloc" val="tr"/>
       <a name="width" val="8"/>
-    </comp>
-    <comp lib="4" loc="(520,270)" name="Register">
-      <a name="appearance" val="logisim_evolution"/>
     </comp>
     <comp lib="4" loc="(520,370)" name="Register">
       <a name="appearance" val="logisim_evolution"/>
@@ -965,14 +954,11 @@ a0 c9 2b 3f 71
     <wire from="(410,520)" to="(520,520)"/>
     <wire from="(420,630)" to="(420,680)"/>
     <wire from="(420,630)" to="(520,630)"/>
-    <wire from="(500,340)" to="(520,340)"/>
     <wire from="(500,440)" to="(520,440)"/>
     <wire from="(500,540)" to="(520,540)"/>
     <wire from="(500,650)" to="(520,650)"/>
-    <wire from="(510,300)" to="(520,300)"/>
-    <wire from="(510,320)" to="(520,320)"/>
     <wire from="(520,400)" to="(530,400)"/>
-    <wire from="(580,300)" to="(620,300)"/>
+    <wire from="(550,300)" to="(620,300)"/>
     <wire from="(580,400)" to="(610,400)"/>
     <wire from="(580,500)" to="(610,500)"/>
     <wire from="(580,610)" to="(620,610)"/>
@@ -1785,7 +1771,7 @@ a0 c9 2b 3f 71
       <circ-port dir="in" pin="440,690" x="50" y="140"/>
       <circ-port dir="in" pin="500,620" x="50" y="100"/>
       <circ-port dir="in" pin="510,820" x="50" y="160"/>
-      <circ-port dir="in" pin="750,450" x="150" y="40"/>
+      <circ-port dir="in" pin="880,450" x="150" y="40"/>
       <circ-port dir="out" pin="1360,720" x="270" y="80"/>
       <circ-port dir="out" pin="1370,520" x="270" y="60"/>
     </appear>
@@ -1843,15 +1829,6 @@ a0 c9 2b 3f 71
     <comp lib="0" loc="(630,800)" name="Ground">
       <a name="facing" val="east"/>
     </comp>
-    <comp lib="0" loc="(750,450)" name="Pin">
-      <a name="appearance" val="classic"/>
-      <a name="label" val="R0"/>
-      <a name="width" val="8"/>
-    </comp>
-    <comp lib="0" loc="(810,490)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="Clk"/>
-    </comp>
     <comp lib="0" loc="(810,590)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="Clk"/>
@@ -1864,13 +1841,14 @@ a0 c9 2b 3f 71
       <a name="facing" val="east"/>
       <a name="label" val="Clk"/>
     </comp>
-    <comp lib="0" loc="(820,470)" name="Power">
-      <a name="facing" val="west"/>
-    </comp>
-    <comp lib="0" loc="(860,510)" name="Ground"/>
     <comp lib="0" loc="(860,610)" name="Ground"/>
     <comp lib="0" loc="(860,710)" name="Ground"/>
     <comp lib="0" loc="(860,820)" name="Ground"/>
+    <comp lib="0" loc="(880,450)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="label" val="R0"/>
+      <a name="width" val="8"/>
+    </comp>
     <comp lib="2" loc="(1300,520)" name="Multiplexer">
       <a name="select" val="2"/>
       <a name="width" val="8"/>
@@ -1887,9 +1865,6 @@ a0 c9 2b 3f 71
     <comp lib="2" loc="(570,820)" name="Demultiplexer">
       <a name="select" val="2"/>
       <a name="selloc" val="tr"/>
-    </comp>
-    <comp lib="4" loc="(830,420)" name="Register">
-      <a name="appearance" val="logisim_evolution"/>
     </comp>
     <comp lib="4" loc="(830,520)" name="Register">
       <a name="appearance" val="logisim_evolution"/>
@@ -1946,14 +1921,11 @@ a0 c9 2b 3f 71
     <wire from="(720,670)" to="(830,670)"/>
     <wire from="(730,780)" to="(730,830)"/>
     <wire from="(730,780)" to="(830,780)"/>
-    <wire from="(750,450)" to="(830,450)"/>
-    <wire from="(810,490)" to="(830,490)"/>
     <wire from="(810,590)" to="(830,590)"/>
     <wire from="(810,690)" to="(830,690)"/>
     <wire from="(810,800)" to="(830,800)"/>
-    <wire from="(820,470)" to="(830,470)"/>
     <wire from="(830,550)" to="(840,550)"/>
-    <wire from="(890,450)" to="(930,450)"/>
+    <wire from="(880,450)" to="(930,450)"/>
     <wire from="(890,550)" to="(920,550)"/>
     <wire from="(890,650)" to="(920,650)"/>
     <wire from="(890,760)" to="(930,760)"/>
