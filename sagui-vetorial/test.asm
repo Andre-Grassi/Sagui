@@ -408,7 +408,7 @@ st $1, $0 # 00010100 = 14
 # Coloca 3 no SR[3]
 ld $3, $0 # 00001100 = 0C
 
-# Carrega o valor da variável de controle nos VR
+# Carrega o valor do índice nos VPE
 movl 0000 # 10110000 = B0 
 movh 0011 # 10100011 = A3 
 ld $3, $1 # 10001101 = 8D 
@@ -427,6 +427,7 @@ and $2, $1 # 11101001 = E9
 
 # Início do laço de soma
 
+# Na soma, o registrador que vai ser o índice é o $2
 
 # Pega endereço do fim do laço b0 ???????
 movl 0000 # 00110000 = 30 ?????
@@ -450,7 +451,7 @@ add $1, $0 # 11000100 = C4
 # Carrega o valor do A no VR[3]
 ld $3, $1 # 10001101 = 8D
 
-# Guarda posição atual no endereço 20 (hex)
+# Guarda índice acessado nos vetores no endereço 20 (hex)
 movl 0000 # 10110000 = B0
 movh 0010 # 10100010 = A2
 st $2, $1 # 10011001 = 99
@@ -470,7 +471,7 @@ ld $2, $1 # 10001001 = 89
 # Faz a soma
 add $3, $2 # 11001110 = CE
 
-# Pega posição atual que está no endereço 20 (hex)
+# Carrega de volta ao VR[2] o índice, que está guaradado no endereço 20 (hex)
 movl 0000 # 10110000 = B0
 movh 0010 # 10100010 = A2
 ld $2, $1 # 10001001 = 89
@@ -487,15 +488,11 @@ add $1, $0 # 11000100 = C4
 # Guarda o valor da soma
 st $3, $1 # 10011101 = 9D
 
-# Carrega posição atual no VR[2]
-movl 0000 # 10110000 = B0
-movh 0010 # 10100010 = A2
-ld $2, $1 # 10001001 = 89
- 
 # Coloca 4 no VR[1]
 movl 0100 # 10110100 = B4
 movh 0000 # 10100000 = A0
 
+# Avança o índice
 # Soma 4 com o VR[2]
 add $2, $1 # 11001001 = C9
 
