@@ -139,24 +139,24 @@ movl 0000 # 10110000 = B0
 and $2, $1 # 11101001 = E9
 and $3, $1 # 11101101 = ED
 
-# Guarda no VR[1] o valor do endereço em que será guardado o valor da
-# variável de controle --> Endereço 30 (hex) = 48 (dec)
+# Guarda no VR[1] o endereço em que será guardado o valor da
+# variável índice, que indica qual o salto de endereço que deve ser
+# realizado para guardar os dados no local certo do vetor na RAM
+# Endereço 30 (hex) = 48 (dec)
 movl 0000 # 10110000 = B0
 movh 0011 # 10100011 = A3
 
 # Guarda no endereço 0 o endereço 30
 st $1, $2 # 10010110 = 96
 
-# Guarda no VR[2] o endereço da variável de controle
+# Guarda no VR[2] o endereço do índice
 ld $2, $2 # 10001010 = 8A
 
-# Inicializa o valor da variável de controle com 0 nos VPE
+# Inicializa o valor do índice com 0 nos VPE
 and $1, $3 # 11100111 = E7
 
-# Guarda no endereço 30 de cada RAM o valor da variável de controle
+# Guarda no endereço 30 de cada RAM o valor do índice
 st $1, $2 # 10010110 = 96
-
-
 
 # Inicializa SR[1], SR[2] e SR[3] com 0
 and $1, $0 # 01100100 = 64
@@ -172,6 +172,8 @@ st $1, $0 # 00010100 = 14
 # Coloca 1 no SR[2]
 ld $2, $0 # 00001000 = 08
 
+# Aqui é definido o valor do contador, que controla quantas vezes o laço de
+# inicialização do vetor será executado.
 # Coloca o valor 3 (para controlar o laço) no SR[1] e depois passa para o SR[3]
 movl 0011 # 00110011 = 33
 
@@ -181,12 +183,15 @@ st $1, $0 # 00010100 = 14
 # Coloca 3 no SR[3]
 ld $3, $0 # 00001100 = 0C
 
-# Carrega o valor da variável de controle nos VR
+# Carrega o valor do índice nos VR
 movl 0000 # 10110000 = B0 
 movh 0011 # 10100011 = A3 
 ld $3, $1 # 10001101 = 8D 
 
-# Pega próxima posição em que será guardado o valor
+# Pega posição em que será guardado o valor em cada VPE
+# No caso do VPE 0, o endereço vai ser 0
+# VPE 1 vai ser 1
+# VPE 2 vai ser 2...
 add $3, $0 # 11001100 = CC 
 
 # Coloca 0 no VR[2]
@@ -194,6 +199,13 @@ movl 0000 # 10110000 = B0
 movh 0000 # 10100000 = A0
 and $2, $1 # 11101001 = E9
 
+# Pega os 4 primeiros valores que vão ser armazenados no vetor
+# Soma-se duas vezes com o VR[0] para obter os números pares
+# Assim, temos:
+# VPE 0: 0 + 0 = 0 --> 0 + 0 = 0
+# VPE 1: 0 + 1 = 1 --> 1 + 1 = 2
+# VPE 2: 0 + 2 = 2 --> 2 + 2 = 4
+# VPE 3: 0 + 3 = 3 --> 3 + 3 = 6
 add $2, $0 # 11001000 = C8
 add $2, $0 # 11001000 = C8
 
@@ -203,21 +215,29 @@ add $2, $0 # 11001000 = C8
 movl 1010 # 00111010 = 3a
 movh 0100 # 00100100 = 24
 
-# Se o valor da variável de controle for 0, pula para o fim do laço
+# Se o valor da variável de controle (contador) for 0, pula para o fim do laço
 brzr $3, $1 # 01111101 = 7D
 
 # Subtrai 1 do SR[3] (variável de controle do laço)
 sub $3, $2 # 01011110 = 5E
 
-# Guarda o próximo valor do vetor na próxima posição
+# Armazena o valor no vetor na posição indicada pelo índice
 st $2, $3 # 10011011 = 9B 
 
 # Coloca o valor 4 no VR[1]
 movl 0100 # 10110100 = B4
 movh 0000 # 10100000 = A0
 
-# Pega próxima posição em que será guardado o valor
+# Pega próxima posição do vetor
+# Aqui soma-se 4 pois cada iteração armazena 4 valores simultaneamente
+# Logo é necessário pular 4 posições para armazenar os próximos valores
 add $3, $1 # 11001101 = CD
+
+# Pega o próximo valor do vetor
+
+# Há um padrão nos valores, a cada 4 posições, o valor é incrementado em 8
+# Por exemplo na posição 0 temos 0, já na 4 temos 8
+# Na 1 temos 2, já na 5 temos 10, e assim por diante
 
 # Coloca 8 no VR[1]
 movl 1000 # 10111000 = B8
