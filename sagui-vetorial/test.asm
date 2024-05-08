@@ -428,6 +428,8 @@ and $2, $1 # 11101001 = E9
 # Início do laço de soma
 
 # Na soma, o registrador que vai ser o índice é o $2
+# E na hora de calcular o resultado, $2 guarda o valor do vetor B
+# e $3 guarda o valor do vetor A
 
 # Pega endereço do fim do laço b0 ???????
 movl 0000 # 00110000 = 30 ?????
