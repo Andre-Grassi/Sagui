@@ -350,12 +350,12 @@ st $1, $0 # 00010100 = 14
 # Coloca 3 no SR[3]
 ld $3, $0 # 00001100 = 0C
 
-# Carrega o valor da variável de controle nos VR
+# Carrega índice nos VPE
 movl 0000 # 10110000 = B0 
 movh 0011 # 10100011 = A3 
 ld $3, $1 # 10001101 = 8D 
 
-# Pega próxima posição em que será guardado o valor
+# Pega posição em que será guardado o valor
 # Vetor inicia no endereço 14
 movl 0100 # 10110100 = B4
 movh 0001 # 10100001 = A1
@@ -373,13 +373,13 @@ and $2, $1 # 11101001 = E9
 movl 0010 # 00110010 = 32
 movh 1010 # 00101010 = 2A
 
-# Se o valor da variável de controle for 0, pula para o fim do laço
+# Se o valor do índice for 0, pula para o fim do laço
 brzr $3, $1 # 01111101 = 7D
 
 # Subtrai 1 do SR[3] (variável de controle do laço)
 sub $3, $2 # 01011110 = 5E
 
-# Guarda o próximo valor do vetor na próxima posição
+# Armazena o valor no vetor na posição indicada pelo índice
 st $2, $3 # 10011011 = 9B 
 
 # Coloca o valor 4 no VR[1]
