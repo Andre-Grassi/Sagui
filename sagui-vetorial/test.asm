@@ -338,9 +338,9 @@ and $2, $1 # 11101001 = E9
 
 # Início do laço de inicialização do vetor R
 
-# Pega endereço do fim do laço b0
-movl 0000 # 00110000 = 30
-movh 1011 # 00101011 = 2B
+# Pega endereço do fim do laço A2 (hex)
+movl 0010 # 00110010 = 32
+movh 1010 # 00101010 = 2A
 
 # Se o valor da variável de controle for 0, pula para o fim do laço
 brzr $3, $1 # 01111101 = 7D
@@ -358,9 +358,9 @@ movh 0000 # 10100000 = A0
 # Pega próxima posição em que será guardado o valor
 add $3, $1 # 11001101 = CD
 
-# Pega valor do jump = 9E (hex)
+# Pega valor do jump = 97 (hex)
 movh 1001 # 00101001 = 29
-movl 1110 # 00111110 = 3E
+movl 0111 # 00110111 = 37
 
 brzr $0, $1 # 01110001 = 71
 
