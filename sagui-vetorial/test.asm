@@ -6,7 +6,7 @@
 # mnem. # sign. da operação --> # instr. em bin. = instr. em hex. #
 
 
-######## Operações Escalarares ########
+######## Teste das Operações Escalarares ########
 
 ## MOV ##
 
@@ -58,8 +58,6 @@ sub $2, $3 # R[2] = R[2] - R[3] = 14 - 7 = 7 --> 01011011 = 5B
 # And de R[2] com R[3]
 and $2, $3 # R[2] = R[2] & R[3] = 7 & 7 = 7 --> 01101011 = 6B
 
-########### Tudo certo até aqui no scalar ###########
-
 
 # BRZR #
 
@@ -71,7 +69,7 @@ movh 0001  # R[1] = {Imm + R[1](3:0)} = {0001 + 0000} = 00010000 = 16 = 10 (hex)
 brzr $0, $1 # if (R[0] == 0) PC = R[1] = 160 = A0 (hex) --> 01110001 = 71
 
 
-######## Operações Vetoriais ########
+######## Teste das Operações Vetoriais ########
 
 ## MOV ##
 
@@ -131,6 +129,8 @@ or $2, $3 # R[2] = R[2] | R[3] = 7 | 7 = 7 --> 11111011 = FB
 
 ## PROGRAMA DE SOMA ##
 
+# Inicializa os VR com 0 para resetar seus valores
+
 # Inicializa VR[1] com 0
 movh 0000 # 10100000 = A0
 movl 0000 # 10110000 = B0
@@ -142,11 +142,25 @@ and $3, $1 # 11101101 = ED
 # Guarda no VR[1] o endereço em que será guardado o valor da
 # variável índice, que indica qual o salto de endereço que deve ser
 # realizado para guardar os dados no local certo do vetor na RAM
+
+# Esse salto é de 4 em 4 posições, pois cada iteração guarda 4 valores
+# sendo que cada VPE vai acessar um endereço diferente da RAM, de forma
+# sequencial
+
+# Por exemplo, na primeira iteração o índice vai valer 0
+# logo, o VPE 0 vai guardar o valor na posição 0
+# o VPE 1 vai guardar o valor na posição 1, etc.
+# Já na segunda iteração o índice vai valer 4
+# logo, o VPE 0 vai guardar o valor na posição 4
+# o VPE 1 vai guardar o valor na posição 5, etc.
+
 # Endereço 30 (hex) = 48 (dec)
 movl 0000 # 10110000 = B0
 movh 0011 # 10100011 = A3
 
 # Guarda no endereço 0 o endereço 30
+# Essa instrução serve apenas para transferir o
+# endereço para o VR[2] na próxima instrução
 st $1, $2 # 10010110 = 96
 
 # Guarda no VR[2] o endereço do índice
@@ -170,6 +184,8 @@ movl 0001 # 00110001 = 31
 st $1, $0 # 00010100 = 14
 
 # Coloca 1 no SR[2]
+# Esse 1 vai servir para decrementar de 1 em 1 o contador do laço a cada
+# iteração
 ld $2, $0 # 00001000 = 08
 
 # Aqui é definido o valor do contador, que controla quantas vezes o laço de
@@ -180,7 +196,7 @@ movl 0011 # 00110011 = 33
 # Guarda no endereço 0 o valor 3
 st $1, $0 # 00010100 = 14
 
-# Coloca 3 no SR[3]
+# Carrega 3 no SR[3]
 ld $3, $0 # 00001100 = 0C
 
 # Carrega o valor do índice nos VR
@@ -189,7 +205,8 @@ movh 0011 # 10100011 = A3
 ld $3, $1 # 10001101 = 8D 
 
 # Pega posição em que será guardado o valor em cada VPE
-# No caso do VPE 0, o endereço vai ser 0
+# Como aqui o índice ainda vale 0, temos o seguinte:
+# No VPE 0, o endereço vai ser 0
 # VPE 1 vai ser 1
 # VPE 2 vai ser 2...
 add $3, $0 # 11001100 = CC 
@@ -207,7 +224,6 @@ and $2, $1 # 11101001 = E9
 # VPE 1: 0 + 1 = 1 --> 1 + 1 = 2
 # VPE 2: 0 + 2 = 2 --> 2 + 2 = 4
 # VPE 3: 0 + 3 = 3 --> 3 + 3 = 6
-
 add $2, $0 # 11001000 = C8
 add $2, $0 # 11001000 = C8
 
@@ -223,7 +239,7 @@ brzr $3, $1 # 01111101 = 7D
 # Subtrai 1 do SR[3] (variável de controle do laço)
 sub $3, $2 # 01011110 = 5E
 
-# Armazena o valor no vetor na posição indicada pelo índice
+# Armazena o valor ($2) no vetor na posição indicada pelo índice ($3)
 st $2, $3 # 10011011 = 9B 
 
 # Coloca o valor 4 no VR[1]
@@ -245,7 +261,7 @@ add $3, $1 # 11001101 = CD
 movl 1000 # 10111000 = B8
 movh 0000 # 10100000 = A0
 
-# Soma 8 ao VR[2]
+# Soma 8 ao VR[2] (pega próximo valor)
 add $2, $1 # 11001001 = C9
 
 # Pega valor do jump = 3b (hex)
@@ -503,12 +519,3 @@ movh 1011 # 00101011 = 2B
 movl 0111 # 00110111 = 37
 
 brzr $0, $1 # 01110001 = 71
-
-## TA DANDO ERRADO SÓ AS SOMAS DAS ÚLTIMAS 2 POSIÇÕES
-
-
-## Nos VPE o endereço da variável de controle é o 30 e ele inicia em 0
-## e o valor do j é o 31
-## Nos SR o endereço da variável de controle é o 0, e ele inicia em 11
-
-# Trocar os resets dos regs com o uso do and pra diminuir numero de instruções
