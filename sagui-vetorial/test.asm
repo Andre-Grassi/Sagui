@@ -259,9 +259,9 @@ add $3, $1 # 11001101 = CD
 add $3, $0 # 11001100 = CC 
 
 # Coloca 0 no VR[2]
-movl 0001 # 10110001 = B1 ## Esses comandos n vao mudar nada
-movh 0011 # 10100011 = A3 ## Tbm n muda nada
-ld $2, $1 # 10001001 = 89
+movl 0000 # 10110000 = B0
+movh 0000 # 10100000 = A0
+and $2, $1 # 11101001 = E9
 
 # Coloca 1 no VR[2]
 movl 0001 # 10110001 = B1
@@ -273,9 +273,9 @@ add $2, $0 # 11001000 = C8
 
 # Início do laço de inicialização do vetor B
 
-# Pega endereço do fim do laço
-movl 0000 # 00110000 = 30
-movh 1001 # 00101001 = 29
+# Pega endereço do fim do laço = 7c (hex)
+movl 1100 # 00111100 = 3C
+movh 0111 # 00100111 = 27
 
 # Se o valor da variável de controle for 0, pula para o fim do laço
 brzr $3, $1 # 01111101 = 7D
@@ -300,9 +300,9 @@ movh 0000 # 10100000 = A0
 # Soma 8 ao VR[2]
 add $2, $1 # 11001001 = C9
 
-# Pega valor do jump = 75 (hex)
-movh 0111 # 00100111 = 27
-movl 0101 # 00110101 = 35
+# Pega valor do jump = 6e (hex)
+movh 0110 # 00100110 = 26
+movl 1110 # 00111110 = 3E
 
 brzr $0, $1 # 01110001 = 71
 
@@ -332,9 +332,9 @@ add $3, $1 # 11001101 = CD
 add $3, $0 # 11001100 = CC 
 
 # Coloca 0 no VR[2]
-movl 0001 # 10110001 = B1 ## Esses comandos n vao mudar nada
-movh 0011 # 10100011 = A3 ## Tbm n muda nada
-ld $2, $1 # 10001001 = 89
+movl 0000 # 10110000 = B0
+movh 0000 # 10100000 = A0
+and $2, $1 # 11101001 = E9
 
 # Início do laço de inicialização do vetor R
 
