@@ -202,10 +202,12 @@ and $2, $1 # 11101001 = E9
 # Pega os 4 primeiros valores que vão ser armazenados no vetor
 # Soma-se duas vezes com o VR[0] para obter os números pares
 # Assim, temos:
+# Significado das operações: $2 + $0 = $2 --> $2 + $0 = $2
 # VPE 0: 0 + 0 = 0 --> 0 + 0 = 0
 # VPE 1: 0 + 1 = 1 --> 1 + 1 = 2
 # VPE 2: 0 + 2 = 2 --> 2 + 2 = 4
 # VPE 3: 0 + 3 = 3 --> 3 + 3 = 6
+
 add $2, $0 # 11001000 = C8
 add $2, $0 # 11001000 = C8
 
@@ -266,12 +268,12 @@ st $1, $0 # 00010100 = 14
 # Coloca 3 no SR[3]
 ld $3, $0 # 00001100 = 0C
 
-# Carrega o valor da variável de controle nos VR
+# Carrega o valor do índice nos VR
 movl 0000 # 10110000 = B0 
 movh 0011 # 10100011 = A3 
 ld $3, $1 # 10001101 = 8D 
 
-# Pega próxima posição em que será guardado o valor
+# Pega posição em que será guardado o valor
 # Vetor inicia no endereço 0a
 movl 1010 # 10111010 = BA
 movh 0000 # 10100000 = A0
@@ -288,6 +290,15 @@ movl 0001 # 10110001 = B1
 movh 0000 # 10100000 = A0
 add $2, $1 # 11001001 = C9
 
+# Pega os 4 primeiros valores que vão ser armazenados no vetor
+# Soma-se duas vezes com o VR[0] + 1 para obter os números ímpares
+# Assim, temos:
+# Significado das operações: $2 + $1 + $0 = $2 --> $2 + $0 = $2
+# VPE 0: 0 + 1 + 0 = 1 --> 1 + 0 = 1
+# VPE 1: 0 + 1 + 1 = 2 --> 2 + 1 = 3
+# VPE 2: 0 + 1 + 2 = 3 --> 3 + 2 = 5
+# VPE 3: 0 + 1 + 3 = 4 --> 4 + 3 = 7
+
 add $2, $0 # 11001000 = C8
 add $2, $0 # 11001000 = C8
 
@@ -303,7 +314,7 @@ brzr $3, $1 # 01111101 = 7D
 # Subtrai 1 do SR[3] (variável de controle do laço)
 sub $3, $2 # 01011110 = 5E
 
-# Guarda o próximo valor do vetor na próxima posição
+# Armazena o valor no vetor na posição indicada pelo índice
 st $2, $3 # 10011011 = 9B 
 
 # Coloca o valor 4 no VR[1]
