@@ -392,8 +392,7 @@ add $3, $0 # 11001100 = CC
 # Coloca 0 no VR[2] e VR[1]
 movl 0000 # 10110000 = B0
 movh 0000 # 10100000 = A0
-st $1, $1 # 10010101 = 95
-ld $2, $1 # 10001001 = 89
+and $2, $1 # 11101001 = E9
 
 # Início do laço de soma
 
@@ -409,7 +408,6 @@ brzr $3, $1 # 01111101 = 7D
 sub $3, $2 # 01011110 = 5E
 
 # Pega endereço do vetor A
-# Acho que não precisa pois o $1 já vale 0
 movl 0000 # 10110000 = B0
 movh 0000 # 10100000 = A0
 
@@ -470,9 +468,9 @@ movh 0000 # 10100000 = A0
 # Soma 4 com o VR[2]
 add $2, $1 # 11001001 = C9
 
-# Pega valor do jump = BF (hex)
+# Pega valor do jump = B7 (hex)
 movh 1011 # 00101011 = 2B
-movl 1111 # 00111111 = 3F
+movl 0111 # 00110111 = 37
 
 brzr $0, $1 # 01110001 = 71
 
