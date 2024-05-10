@@ -60,7 +60,7 @@
     <a name="appearance" val="logisim_evolution"/>
     <a name="circuit" val="main"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="simulationFrequency" val="32.0"/>
+    <a name="simulationFrequency" val="64.0"/>
     <appear>
       <rect height="20" stroke="none" width="200" x="60" y="60"/>
       <rect fill="none" height="30" stroke="#000000" stroke-width="2" width="200" x="60" y="50"/>
@@ -738,12 +738,12 @@
       <a name="labelfont" val="SansSerif bold 17"/>
       <a name="labelvisible" val="true"/>
     </comp>
-    <comp lib="4" loc="(3150,1910)" name="RAM">
+    <comp lib="4" loc="(3160,1910)" name="RAM">
       <a name="appearance" val="classic"/>
       <a name="asyncread" val="true"/>
       <a name="labelvisible" val="true"/>
     </comp>
-    <comp lib="4" loc="(3150,2620)" name="RAM">
+    <comp lib="4" loc="(3160,2620)" name="RAM">
       <a name="appearance" val="classic"/>
       <a name="asyncread" val="true"/>
       <a name="labelvisible" val="true"/>
@@ -1479,21 +1479,21 @@ a0 c9 2b 37 71
     <wire from="(3010,1180)" to="(3010,1300)"/>
     <wire from="(3010,1300)" to="(3140,1300)"/>
     <wire from="(3010,1890)" to="(3010,2000)"/>
-    <wire from="(3010,2000)" to="(3150,2000)"/>
+    <wire from="(3010,2000)" to="(3160,2000)"/>
     <wire from="(3010,420)" to="(3010,560)"/>
     <wire from="(3010,560)" to="(3140,560)"/>
     <wire from="(3020,2600)" to="(3020,2710)"/>
-    <wire from="(3020,2710)" to="(3150,2710)"/>
+    <wire from="(3020,2710)" to="(3160,2710)"/>
     <wire from="(3090,1200)" to="(3090,1220)"/>
     <wire from="(3090,1220)" to="(3140,1220)"/>
     <wire from="(3090,1250)" to="(3100,1250)"/>
     <wire from="(3090,1280)" to="(3100,1280)"/>
     <wire from="(3090,1900)" to="(3090,1920)"/>
-    <wire from="(3090,1920)" to="(3150,1920)"/>
+    <wire from="(3090,1920)" to="(3160,1920)"/>
     <wire from="(3090,1950)" to="(3100,1950)"/>
     <wire from="(3090,1980)" to="(3100,1980)"/>
     <wire from="(3090,2610)" to="(3090,2630)"/>
-    <wire from="(3090,2630)" to="(3150,2630)"/>
+    <wire from="(3090,2630)" to="(3160,2630)"/>
     <wire from="(3090,2660)" to="(3100,2660)"/>
     <wire from="(3090,2690)" to="(3100,2690)"/>
     <wire from="(3090,410)" to="(3120,410)"/>
@@ -1506,13 +1506,13 @@ a0 c9 2b 37 71
     <wire from="(3100,1270)" to="(3100,1280)"/>
     <wire from="(3100,1270)" to="(3140,1270)"/>
     <wire from="(3100,1950)" to="(3100,1960)"/>
-    <wire from="(3100,1960)" to="(3150,1960)"/>
+    <wire from="(3100,1960)" to="(3160,1960)"/>
     <wire from="(3100,1970)" to="(3100,1980)"/>
-    <wire from="(3100,1970)" to="(3150,1970)"/>
+    <wire from="(3100,1970)" to="(3160,1970)"/>
     <wire from="(3100,2660)" to="(3100,2670)"/>
-    <wire from="(3100,2670)" to="(3150,2670)"/>
+    <wire from="(3100,2670)" to="(3160,2670)"/>
     <wire from="(3100,2680)" to="(3100,2690)"/>
-    <wire from="(3100,2680)" to="(3150,2680)"/>
+    <wire from="(3100,2680)" to="(3160,2680)"/>
     <wire from="(3100,510)" to="(3100,520)"/>
     <wire from="(3100,520)" to="(3140,520)"/>
     <wire from="(3100,530)" to="(3100,540)"/>
@@ -1520,8 +1520,8 @@ a0 c9 2b 37 71
     <wire from="(3120,1280)" to="(3120,1980)"/>
     <wire from="(3120,1280)" to="(3140,1280)"/>
     <wire from="(3120,1980)" to="(3120,2690)"/>
-    <wire from="(3120,1980)" to="(3150,1980)"/>
-    <wire from="(3120,2690)" to="(3150,2690)"/>
+    <wire from="(3120,1980)" to="(3160,1980)"/>
+    <wire from="(3120,2690)" to="(3160,2690)"/>
     <wire from="(3120,410)" to="(3120,540)"/>
     <wire from="(3120,540)" to="(3120,1280)"/>
     <wire from="(3120,540)" to="(3140,540)"/>
@@ -1530,8 +1530,8 @@ a0 c9 2b 37 71
     <wire from="(3290,4260)" to="(3290,5720)"/>
     <wire from="(3380,1300)" to="(3410,1300)"/>
     <wire from="(3380,560)" to="(3410,560)"/>
-    <wire from="(3390,2000)" to="(3410,2000)"/>
-    <wire from="(3390,2710)" to="(3410,2710)"/>
+    <wire from="(3400,2000)" to="(3410,2000)"/>
+    <wire from="(3400,2710)" to="(3410,2710)"/>
     <wire from="(3410,1300)" to="(3410,1390)"/>
     <wire from="(3410,2000)" to="(3410,2090)"/>
     <wire from="(3410,2710)" to="(3410,2800)"/>
