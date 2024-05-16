@@ -354,6 +354,10 @@
       <a name="label" val="SelectR1"/>
       <a name="labelfont" val="SansSerif bold 9"/>
     </comp>
+    <comp lib="0" loc="(920,1910)" name="Ground">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(920,1970)" name="Ground"/>
     <comp lib="0" loc="(930,1540)" name="Constant">
       <a name="width" val="2"/>
     </comp>
@@ -793,6 +797,8 @@ a1 c6 c4 9d b4 a0 c9 2b
     <wire from="(900,930)" to="(1010,930)"/>
     <wire from="(910,1590)" to="(910,1610)"/>
     <wire from="(910,1590)" to="(920,1590)"/>
+    <wire from="(920,1910)" to="(920,1920)"/>
+    <wire from="(920,1960)" to="(920,1970)"/>
     <wire from="(930,1540)" to="(950,1540)"/>
     <wire from="(930,1630)" to="(1020,1630)"/>
     <wire from="(940,1940)" to="(1210,1940)"/>

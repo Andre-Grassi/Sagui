@@ -10,24 +10,42 @@ int main () {
     int i;
     int j;
 
-    // Loop que inicializa os vetores
+    // Loops que inicializam os vetores
     i = 0;
     j = 0;
 
-inicializa:
+inicializa_a:
+    if (i < 10) {
+        vet_a[i] = j;
+
+        j = j + 2;
+        i = i + 1;
+
+        goto inicializa_a;
+    }
+
+    i = 0;
+    j = 1;
+
+inicializa_b:
+    if (i < 10) {
+        vet_b[i] = j;
+
+        j = j + 2;
+        i = i + 1;
+
+        goto inicializa_b;
+    }
+
+    i = 0;
+
+inicializa_r:
     if (i < 10) {
         vet_r[i] = 0;
 
-        vet_a[i] = j;
-
-        j = j + 1;
-
-        vet_b[i] = j;
-
-        j = j + 1;
         i = i + 1;
 
-        goto inicializa;
+        goto inicializa_r;
     }
 
     // Loop que realiza a operação de soma
