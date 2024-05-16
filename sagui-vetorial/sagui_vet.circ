@@ -65,7 +65,7 @@
     <a name="appearance" val="logisim_evolution"/>
     <a name="circuit" val="main"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="simulationFrequency" val="128.0"/>
+    <a name="simulationFrequency" val="32.0"/>
     <appear>
       <rect height="20" stroke="none" width="200" x="60" y="60"/>
       <rect fill="none" height="30" stroke="#000000" stroke-width="2" width="200" x="60" y="50"/>
@@ -888,11 +888,11 @@ a1 c6 c4 9d b4 a0 c9 2b
       <a name="facing" val="east"/>
       <a name="label" val="Clk"/>
     </comp>
-    <comp lib="0" loc="(500,540)" name="Tunnel">
+    <comp lib="0" loc="(500,560)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="Clk"/>
     </comp>
-    <comp lib="0" loc="(500,650)" name="Tunnel">
+    <comp lib="0" loc="(500,690)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="Clk"/>
     </comp>
@@ -901,8 +901,8 @@ a1 c6 c4 9d b4 a0 c9 2b
       <a name="width" val="8"/>
     </comp>
     <comp lib="0" loc="(550,460)" name="Ground"/>
-    <comp lib="0" loc="(550,560)" name="Ground"/>
-    <comp lib="0" loc="(550,670)" name="Ground"/>
+    <comp lib="0" loc="(550,580)" name="Ground"/>
+    <comp lib="0" loc="(550,710)" name="Ground"/>
     <comp lib="0" loc="(970,410)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="facing" val="north"/>
@@ -930,12 +930,18 @@ a1 c6 c4 9d b4 a0 c9 2b
     </comp>
     <comp lib="4" loc="(520,370)" name="Register">
       <a name="appearance" val="logisim_evolution"/>
+      <a name="label" val="R1"/>
+      <a name="showInTab" val="true"/>
     </comp>
-    <comp lib="4" loc="(520,470)" name="Register">
+    <comp lib="4" loc="(520,490)" name="Register">
       <a name="appearance" val="logisim_evolution"/>
+      <a name="label" val="R2"/>
+      <a name="showInTab" val="true"/>
     </comp>
-    <comp lib="4" loc="(520,580)" name="Register">
+    <comp lib="4" loc="(520,620)" name="Register">
       <a name="appearance" val="logisim_evolution"/>
+      <a name="label" val="R3"/>
+      <a name="showInTab" val="true"/>
     </comp>
     <comp lib="8" loc="(490,300)" name="Text">
       <a name="text" val="R0"/>
@@ -954,33 +960,33 @@ a1 c6 c4 9d b4 a0 c9 2b
     <wire from="(300,660)" to="(400,660)"/>
     <wire from="(300,670)" to="(410,670)"/>
     <wire from="(300,680)" to="(420,680)"/>
-    <wire from="(350,480)" to="(350,610)"/>
-    <wire from="(350,610)" to="(520,610)"/>
+    <wire from="(350,480)" to="(350,650)"/>
+    <wire from="(350,650)" to="(520,650)"/>
     <wire from="(360,400)" to="(360,460)"/>
     <wire from="(360,400)" to="(520,400)"/>
-    <wire from="(360,470)" to="(360,500)"/>
-    <wire from="(360,500)" to="(520,500)"/>
+    <wire from="(360,470)" to="(360,520)"/>
+    <wire from="(360,520)" to="(520,520)"/>
     <wire from="(400,420)" to="(400,660)"/>
     <wire from="(400,420)" to="(520,420)"/>
-    <wire from="(410,520)" to="(410,670)"/>
-    <wire from="(410,520)" to="(520,520)"/>
-    <wire from="(420,630)" to="(420,680)"/>
-    <wire from="(420,630)" to="(520,630)"/>
+    <wire from="(410,540)" to="(410,670)"/>
+    <wire from="(410,540)" to="(520,540)"/>
+    <wire from="(420,670)" to="(420,680)"/>
+    <wire from="(420,670)" to="(520,670)"/>
     <wire from="(500,440)" to="(520,440)"/>
-    <wire from="(500,540)" to="(520,540)"/>
-    <wire from="(500,650)" to="(520,650)"/>
+    <wire from="(500,560)" to="(520,560)"/>
+    <wire from="(500,690)" to="(520,690)"/>
     <wire from="(520,400)" to="(530,400)"/>
     <wire from="(550,300)" to="(620,300)"/>
     <wire from="(580,400)" to="(610,400)"/>
-    <wire from="(580,500)" to="(610,500)"/>
-    <wire from="(580,610)" to="(620,610)"/>
+    <wire from="(580,520)" to="(610,520)"/>
+    <wire from="(580,650)" to="(620,650)"/>
     <wire from="(610,400)" to="(610,460)"/>
     <wire from="(610,460)" to="(850,460)"/>
-    <wire from="(610,470)" to="(610,500)"/>
+    <wire from="(610,470)" to="(610,520)"/>
     <wire from="(610,470)" to="(860,470)"/>
     <wire from="(620,300)" to="(620,450)"/>
     <wire from="(620,450)" to="(840,450)"/>
-    <wire from="(620,480)" to="(620,610)"/>
+    <wire from="(620,480)" to="(620,650)"/>
     <wire from="(620,480)" to="(870,480)"/>
     <wire from="(840,350)" to="(840,450)"/>
     <wire from="(840,350)" to="(950,350)"/>
@@ -1668,17 +1674,17 @@ a1 c6 c4 9d b4 a0 c9 2b
       <a name="facing" val="east"/>
       <a name="label" val="Clk"/>
     </comp>
-    <comp lib="0" loc="(810,690)" name="Tunnel">
+    <comp lib="0" loc="(810,710)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="Clk"/>
     </comp>
-    <comp lib="0" loc="(810,800)" name="Tunnel">
+    <comp lib="0" loc="(810,840)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="Clk"/>
     </comp>
     <comp lib="0" loc="(860,610)" name="Ground"/>
-    <comp lib="0" loc="(860,710)" name="Ground"/>
-    <comp lib="0" loc="(860,820)" name="Ground"/>
+    <comp lib="0" loc="(860,730)" name="Ground"/>
+    <comp lib="0" loc="(860,860)" name="Ground"/>
     <comp lib="0" loc="(880,450)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="R0"/>
@@ -1699,12 +1705,18 @@ a1 c6 c4 9d b4 a0 c9 2b
     </comp>
     <comp lib="4" loc="(830,520)" name="Register">
       <a name="appearance" val="logisim_evolution"/>
+      <a name="label" val="VR1"/>
+      <a name="showInTab" val="true"/>
     </comp>
-    <comp lib="4" loc="(830,620)" name="Register">
+    <comp lib="4" loc="(830,640)" name="Register">
       <a name="appearance" val="logisim_evolution"/>
+      <a name="label" val="VR2"/>
+      <a name="showInTab" val="true"/>
     </comp>
-    <comp lib="4" loc="(830,730)" name="Register">
+    <comp lib="4" loc="(830,770)" name="Register">
       <a name="appearance" val="logisim_evolution"/>
+      <a name="label" val="VR3"/>
+      <a name="showInTab" val="true"/>
     </comp>
     <wire from="(1150,500)" to="(1150,600)"/>
     <wire from="(1150,500)" to="(1260,500)"/>
@@ -1740,33 +1752,33 @@ a1 c6 c4 9d b4 a0 c9 2b
     <wire from="(610,810)" to="(710,810)"/>
     <wire from="(610,820)" to="(720,820)"/>
     <wire from="(610,830)" to="(730,830)"/>
-    <wire from="(660,630)" to="(660,760)"/>
-    <wire from="(660,760)" to="(830,760)"/>
+    <wire from="(660,630)" to="(660,800)"/>
+    <wire from="(660,800)" to="(830,800)"/>
     <wire from="(670,550)" to="(670,610)"/>
     <wire from="(670,550)" to="(830,550)"/>
-    <wire from="(670,620)" to="(670,650)"/>
-    <wire from="(670,650)" to="(830,650)"/>
+    <wire from="(670,620)" to="(670,670)"/>
+    <wire from="(670,670)" to="(830,670)"/>
     <wire from="(710,570)" to="(710,810)"/>
     <wire from="(710,570)" to="(830,570)"/>
-    <wire from="(720,670)" to="(720,820)"/>
-    <wire from="(720,670)" to="(830,670)"/>
-    <wire from="(730,780)" to="(730,830)"/>
-    <wire from="(730,780)" to="(830,780)"/>
+    <wire from="(720,690)" to="(720,820)"/>
+    <wire from="(720,690)" to="(830,690)"/>
+    <wire from="(730,820)" to="(730,830)"/>
+    <wire from="(730,820)" to="(830,820)"/>
     <wire from="(810,590)" to="(830,590)"/>
-    <wire from="(810,690)" to="(830,690)"/>
-    <wire from="(810,800)" to="(830,800)"/>
+    <wire from="(810,710)" to="(830,710)"/>
+    <wire from="(810,840)" to="(830,840)"/>
     <wire from="(830,550)" to="(840,550)"/>
     <wire from="(880,450)" to="(930,450)"/>
     <wire from="(890,550)" to="(920,550)"/>
-    <wire from="(890,650)" to="(920,650)"/>
-    <wire from="(890,760)" to="(930,760)"/>
+    <wire from="(890,670)" to="(920,670)"/>
+    <wire from="(890,800)" to="(930,800)"/>
     <wire from="(920,550)" to="(920,610)"/>
     <wire from="(920,610)" to="(1160,610)"/>
     <wire from="(920,620)" to="(1170,620)"/>
-    <wire from="(920,620)" to="(920,650)"/>
+    <wire from="(920,620)" to="(920,670)"/>
     <wire from="(930,450)" to="(930,600)"/>
     <wire from="(930,600)" to="(1150,600)"/>
     <wire from="(930,630)" to="(1180,630)"/>
-    <wire from="(930,630)" to="(930,760)"/>
+    <wire from="(930,630)" to="(930,800)"/>
   </circuit>
 </project>
