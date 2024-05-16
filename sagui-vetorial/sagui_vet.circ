@@ -32,7 +32,7 @@
   <options>
     <a name="gateUndefined" val="error"/>
     <a name="simlimit" val="1000"/>
-    <a name="simrand" val="0"/>
+    <a name="simrand" val="32"/>
   </options>
   <mappings>
     <tool lib="8" map="Button2" name="Poke Tool"/>
@@ -65,7 +65,7 @@
     <a name="appearance" val="logisim_evolution"/>
     <a name="circuit" val="main"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="simulationFrequency" val="32.0"/>
+    <a name="simulationFrequency" val="128.0"/>
     <appear>
       <rect height="20" stroke="none" width="200" x="60" y="60"/>
       <rect fill="none" height="30" stroke="#000000" stroke-width="2" width="200" x="60" y="50"/>
@@ -458,11 +458,11 @@ b4 a0 cd b8 a0 c9 26 3e
 32 2a 7d 5e 9b b4 a0 cd
 29 37 71 7*0 20 33 14 c
 b0 a3 8d b4 a1 cd cc b0
-a0 e9 30 2b 7d 5e b0 a0
+a0 e9 37 2d 7d 5e b0 a0
 c6 c4 8d b0 a2 99 ba a0
 c6 c4 89 ce b0 a2 89 b4
-a1 c6 c4 9d b0 a2 89 b4
-a0 c9 2b 37 71
+a1 c6 c4 9d b4 a0 c9 2b
+37 71
 </a>
       <a name="label" val="Instrucoes"/>
     </comp>
@@ -475,19 +475,19 @@ a0 c9 2b 37 71
     <comp lib="8" loc="(1265,2060)" name="Text">
       <a name="text" val="pc = rb"/>
     </comp>
-    <comp lib="8" loc="(2266,428)" name="Text">
+    <comp lib="8" loc="(2265,425)" name="Text">
       <a name="font" val="SansSerif bold 20"/>
       <a name="text" val="VPE 0"/>
     </comp>
-    <comp lib="8" loc="(2270,684)" name="Text">
-      <a name="font" val="SansSerif bold 20"/>
-      <a name="text" val="VPE 1"/>
-    </comp>
-    <comp lib="8" loc="(2274,1162)" name="Text">
+    <comp lib="8" loc="(2270,1160)" name="Text">
       <a name="font" val="SansSerif bold 20"/>
       <a name="text" val="VPE 3"/>
     </comp>
-    <comp lib="8" loc="(2282,948)" name="Text">
+    <comp lib="8" loc="(2270,680)" name="Text">
+      <a name="font" val="SansSerif bold 20"/>
+      <a name="text" val="VPE 1"/>
+    </comp>
+    <comp lib="8" loc="(2280,945)" name="Text">
       <a name="font" val="SansSerif bold 20"/>
       <a name="text" val="VPE 2"/>
     </comp>
@@ -937,7 +937,7 @@ a0 c9 2b 37 71
     <comp lib="4" loc="(520,580)" name="Register">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="8" loc="(494,304)" name="Text">
+    <comp lib="8" loc="(490,300)" name="Text">
       <a name="text" val="R0"/>
     </comp>
     <wire from="(120,390)" to="(150,390)"/>

@@ -65,7 +65,7 @@ and $2, $3 # R[2] = R[2] & R[3] = 7 & 7 = 7 --> 01101011 = 6B
 movl 0000  # R[1] = {R[1](7:4) + Imm.} = {0000 + 0000} = 00000000 = 0 --> 00110000 = 30
 movh 0001  # R[1] = {Imm + R[1](3:0)} = {0001 + 0000} = 00010000 = 16 = 10 (hex) --> 00100001 = 21
 
-# Pula para o endereço A0
+# Pula para o endereço 10 (hex)
 brzr $0, $1 # if (R[0] == 0) PC = R[1] = 160 = A0 (hex) --> 01110001 = 71
 
 
@@ -447,9 +447,9 @@ and $2, $1 # 11101001 = E9
 # E na hora de calcular o resultado, $2 guarda o valor do vetor B
 # e $3 guarda o valor do vetor A
 
-# Pega endereço do fim do laço b0 ???????
-movl 0000 # 00110000 = 30 ?????
-movh 1011 # 00101011 = 2B ?????
+# Pega endereço do fim do laço d7 
+movl 0111 # 00110111 = 37
+movh 1101 # 00101101 = 2D
 
 # Se o valor da variável de controle for 0, pula para o fim do laço
 brzr $3, $1 # 01111101 = 7D
