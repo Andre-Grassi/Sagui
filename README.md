@@ -16,5 +16,5 @@ O diretório também possui alguns códigos em C e em Assembly fictício da ISA 
 
 O arquivo ROM_Soma é o arquivo de memória do Logisim com as instruções para executar os programas descritos acima.
 
-### Sagui em Bando
+### Sagui-Vetorial
 No diretório `sagui_vetorial` está o conteúdo do trabalho 2, com o [pdf do relatório](https://github.com/Andre-Grassi/Sagui/blob/main/sagui-vetorial/Relat%C3%B3rio_Sagui_em_Bando.pdf), implementação no arquivo `sagui_vet.circ`, códigos em C e assembly, além do arquivo de memória nomeado `test`.
